@@ -75,7 +75,7 @@ export const services: Service[] = [
   },
   {
     slug: "manualtherapie",
-    name: "Manuthera",
+    name: "Manuthera 242",
     cat: "Manualtherapie auf der Manuthera 242",
     img: IMG + "manualtherapie-raum.jpg",
     focus: "center",

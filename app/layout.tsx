@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Physiotherapie Zentrum Nord | Praxis in Hannover List",
     description:
-      "Physiotherapie, Krankengymnastik und Reha in Hannover List. Mit Spezialgeräten wie Stoßwelle, Hochleistungslaser und HydroJet.",
+      "Physiotherapie, Krankengymnastik und Reha in Hannover List. Mit Spezialgeräten wie Stoßwelle und Hochleistungslaser mit 40 Watt.",
     images: ["/images/empfang-hero.jpg"],
   },
   robots: { index: true, follow: true },

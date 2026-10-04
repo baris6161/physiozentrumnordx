@@ -152,26 +152,27 @@ export const services: Service[] = [
     slug: "lasertherapie-hannover",
     name: "Lasertherapie",
     cat: "Selbstzahler und Privat",
-    img: IMG + "Laser_1-1920w.JPG",
+    img: IMG + "chattanooga-behandlung.jpg",
     focus: "center",
     fit: "cover",
-    card: "Hochleistungslaser der Klasse 4. Entzündungshemmend, tief wirksam und ohne Medikamente.",
-    lead: "Unser Hochleistungslaser wirkt entzündungshemmend und tief im Gewebe, ganz ohne Medikamente.",
+    card: "Hochleistungslaser mit 40 Watt. Entzündungshemmend, tief wirksam und ohne Medikamente.",
+    lead: "Unser Hochleistungslaser mit 40 Watt wirkt entzündungshemmend und tief im Gewebe, ganz ohne Medikamente.",
     body: [
-      "Mit dem K-Laser Cube, einem der stärksten Therapielaser seiner Klasse, behandeln wir entzündliche, verschleißbedingte und traumatische Beschwerden an Muskeln, Sehnen und Gelenken.",
+      "Mit dem Chattanooga LightForce XLi, einem Hochleistungslaser mit 40 Watt, behandeln wir entzündliche, verschleißbedingte und traumatische Beschwerden an Muskeln, Sehnen und Gelenken.",
       "Das gebündelte, energiereiche Licht wirkt entzündungshemmend und fördert die Durchblutung bis in tiefe Schichten. Schmerzfrei, ohne Medikamente und ohne die damit verbundenen Nebenwirkungen.",
+      "Typische Beschwerdebilder sind Nackenschmerzen, Kreuzschmerzen, Ischiasbeschwerden, Kiefergelenkerkrankungen, Ellenbogen und Gelenkschmerzen sowie Arthritis.",
     ],
     benefits: [
-      "Bei Bandscheiben und Gelenkbeschwerden",
-      "Bei Sehnen und Muskelerkrankungen",
-      "Zwei Wellenlängen für tiefe Wirkung",
-      "Ohne Medikamente und Nebenwirkungen",
+      "Bei Nacken, Kreuz und Ischiasschmerzen",
+      "Bei Ellenbogen und Gelenkbeschwerden",
+      "Bei Kiefergelenkerkrankungen und Arthritis",
+      "40 Watt Leistung, ohne Medikamente",
     ],
-    device: "Chattanooga LightForce XLi und K-Laser Cube, zwei Hochleistungslaser der Klasse 4.",
+    device: "Chattanooga LightForce XLi, Hochleistungslaser der Klasse 4 mit 40 Watt.",
     related: ["stosswellentherapie-hannover", "physiotherapie", "schroepftherapie"],
     metaTitle: "Lasertherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
-      "Lasertherapie in Hannover mit Hochleistungslaser der Klasse 4. Entzündungshemmend und tief wirksam bei Gelenk, Sehnen und Bandscheibenbeschwerden.",
+      "Lasertherapie in Hannover mit 40 Watt Hochleistungslaser. Bei Nackenschmerzen, Kreuzschmerzen, Ischias, Kiefergelenk, Ellenbogen und Arthritis.",
   },
   {
     slug: "schroepftherapie",
@@ -289,6 +290,8 @@ export interface Device {
   focus: Focus;
   fit: Fit; // "contain" fuer freigestellte Herstellerfotos, "cover" fuer Praxisaufnahmen
   ownPage: boolean; // eigene Detailseite unter /geraete/<slug>?
+  video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
+  indications?: string[]; // Beschwerdebilder, bei denen das Geraet eingesetzt wird
   desc: string; // Kurztext auf der Karte
   lead: string; // Einleitung auf der Geraeteseite
   body: string[];
@@ -303,10 +306,10 @@ export const devices: Device[] = [
   {
     slug: "manuthera-242",
     name: "Manuthera 242",
-    tag: "Behandlungsliege von Lojer",
-    img: IMG + "manuthera-242.jpg",
+    tag: "Behandlungsliege von Lojer, Selbstzahler",
+    img: IMG + "manualtherapie-raum.jpg",
     focus: "center",
-    fit: "contain",
+    fit: "cover",
     ownPage: true,
     desc: "Die weltweit erste Liege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Dekompression.",
     lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind.",
@@ -314,43 +317,19 @@ export const devices: Device[] = [
       "Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander. Dadurch können wir Ihre Wirbelsäule gezielt in Rotation, Seitneigung und Traktion bringen, während Sie entspannt liegen bleiben.",
       "Für Sie bedeutet das vor allem eines: Sie müssen sich während der Behandlung nicht aktiv halten oder umlagern. Wir arbeiten mit der Liege statt gegen Ihr Körpergewicht und können so auch bei akuten Beschwerden sehr sanft vorgehen.",
       "Wir setzen die Manuthera vor allem in der Manualtherapie ein, bei Nacken und Rückenbeschwerden sowie zur Entlastung der Bandscheiben.",
+      "Die Behandlung auf der Manuthera 242 bieten wir ausschließlich als Selbstzahlerleistung an. Sprechen Sie uns auf Dauer und Kosten an, wir beraten Sie gern.",
     ],
     benefits: [
       "Dreidimensionale Mobilisation der Wirbelsäule",
       "Sanfte Traktion und Entlastung",
       "Entlastet Bandscheiben und Facettengelenke",
       "Auch bei akuten Beschwerden einsetzbar",
+      "Ausschließlich als Selbstzahlerleistung",
     ],
     serviceSlug: "manualtherapie",
     metaTitle: "Manuthera 242 in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Behandlung auf der Manuthera 242 von Lojer in Hannover List. Dreidimensionale Mobilisation, Traktion und sanfte Entlastung der Wirbelsäule.",
-  },
-  {
-    slug: "hydrojet",
-    name: "HydroJet",
-    tag: "Wasser-Massagebett",
-    img: IMG + "hydrojet.jpg",
-    focus: "center",
-    fit: "cover",
-    ownPage: true,
-    desc: "Wärme und Wasserdruck-Massage für tiefe Entspannung, ganz ohne sich auskleiden zu müssen.",
-    lead: "Auf dem HydroJet massieren warme Wasserstrahlen Ihren Rücken, ohne dass Sie mit dem Wasser in Berührung kommen. Sie bleiben dabei vollständig bekleidet.",
-    body: [
-      "Sie legen sich auf eine wasserdichte Liegefläche. Darunter bewegen sich Düsen, die warmes Wasser mit einstellbarem Druck gegen die Folie strahlen. Die Massage erreicht so den ganzen Rücken, vom Nacken bis zu den Beinen.",
-      "Druck, Tempo und Zonen lassen sich einstellen. Wer empfindlich ist, bekommt eine sanfte Wellenmassage, wer tiefere Verspannungen hat, eine kräftigere Anwendung. Die Wärme entspannt die Muskulatur zusätzlich.",
-      "Der HydroJet eignet sich gut als Vorbereitung auf eine manuelle Behandlung, weil die Muskulatur danach deutlich besser löslich ist. Viele nutzen ihn auch einfach zum Abschalten.",
-    ],
-    benefits: [
-      "Vollständig bekleidet, kein Umziehen nötig",
-      "Wärme und Wasserdruck in einer Anwendung",
-      "Druck und Intensität individuell einstellbar",
-      "Gute Vorbereitung auf manuelle Behandlungen",
-    ],
-    serviceSlug: "massage",
-    metaTitle: "HydroJet Wassermassage in Hannover | Physiotherapie Zentrum Nord",
-    metaDescription:
-      "HydroJet Wasser-Massagebett in Hannover List. Warme Wasserstrahl-Massage für den Rücken, ganz ohne sich auskleiden zu müssen.",
   },
   {
     slug: "galileo-fit",
@@ -405,56 +384,43 @@ export const devices: Device[] = [
       "Radiale Stoßwellentherapie mit dem Swiss DolorClast von EMS in Hannover List. Bei Fersensporn, Tennisellenbogen und Triggerpunkten.",
   },
   {
-    slug: "k-laser-cube",
-    name: "K-Laser Cube",
-    tag: "Hochleistungslaser",
-    img: IMG + "Laser_1-1920w.JPG",
-    focus: "center",
-    fit: "contain",
-    ownPage: true,
-    desc: "Laserlicht dringt tief ins Gewebe ein und unterstützt Heilung und Schmerzlinderung.",
-    lead: "Der K-Laser Cube arbeitet mit mehreren Wellenlängen gleichzeitig und erreicht dadurch unterschiedlich tief liegende Gewebeschichten.",
-    body: [
-      "Laserlicht wird im Gewebe von den Zellen aufgenommen und regt dort den Stoffwechsel an. Die Durchblutung steigt, der Abtransport von Entzündungsstoffen verbessert sich.",
-      "Die Anwendung ist schmerzfrei. Sie spüren an der behandelten Stelle meist nur eine angenehme Wärme. Dauer und Leistung stellen wir je nach Region und Beschwerdebild ein.",
-      "Wir setzen den Laser bei Sehnen und Gelenkbeschwerden ein, bei Verletzungen der Muskulatur und begleitend nach Operationen.",
-    ],
-    benefits: [
-      "Schmerzfreie Anwendung",
-      "Mehrere Wellenlängen für verschiedene Gewebetiefen",
-      "Bei Sehnen und Gelenkbeschwerden",
-      "Begleitend nach Verletzung und Operation",
-    ],
-    serviceSlug: "lasertherapie-hannover",
-    metaTitle: "K-Laser Cube Lasertherapie in Hannover | Physiotherapie Zentrum Nord",
-    metaDescription:
-      "Hochleistungs-Lasertherapie mit dem K-Laser Cube in Hannover List. Schmerzfrei, bei Sehnen und Gelenkbeschwerden sowie nach Verletzungen.",
-  },
-  {
     slug: "chattanooga-lightforce-xli",
     name: "Chattanooga LightForce XLi",
-    tag: "Hochleistungslaser",
-    img: IMG + "chattanooga-lightforce-xli.jpg",
+    tag: "Hochleistungslaser mit 40 Watt",
+    img: IMG + "chattanooga-behandlung.jpg",
     focus: "center",
-    fit: "contain",
+    fit: "cover",
     ownPage: true,
-    desc: "Leistungsstarke Lasertherapie für tiefer liegende Strukturen und größere Behandlungsflächen.",
-    lead: "Der LightForce XLi von Chattanooga ist ein Hochleistungslaser, mit dem sich auch größere Areale und tiefer liegende Strukturen in kurzer Zeit behandeln lassen.",
+    // Behandlungsvideo des Herstellers, liegt lokal unter public/videos.
+    // Bewusst kein YouTube-Embed: das wuerde beim Seitenaufruf Cookies
+    // setzen und eine Einwilligung erfordern.
+    video: "/videos/chattanooga-lightforce.mp4",
+    desc: "Lasertherapie mit 40 Watt. Erreicht tiefer liegende Strukturen und größere Behandlungsflächen.",
+    lead: "Der LightForce XLi von Chattanooga ist unser Hochleistungslaser mit 40 Watt. Damit behandeln wir auch tiefer liegende Strukturen und größere Areale in kurzer Zeit.",
     body: [
-      "Durch die höhere Leistung bringen wir in derselben Zeit mehr Lichtenergie ins Gewebe als mit schwächeren Geräten. Das verkürzt die Behandlungsdauer spürbar, gerade bei großen Regionen wie dem unteren Rücken.",
+      "Laserlicht wird im Gewebe von den Zellen aufgenommen und regt dort den Stoffwechsel an. Die Durchblutung steigt, der Abtransport von Entzündungsstoffen verbessert sich.",
+      "Mit 40 Watt bringen wir in derselben Zeit deutlich mehr Lichtenergie ins Gewebe als mit schwächeren Geräten. Das verkürzt die Behandlungsdauer spürbar, gerade bei großen Regionen wie dem unteren Rücken.",
       "Das Handstück wird während der Anwendung über die Haut geführt. Sie spüren dabei eine deutliche, angenehme Wärme. Die Behandlung bleibt schmerzfrei.",
-      "Zusammen mit dem K-Laser Cube deckt der XLi ein breites Spektrum ab, von kleinen punktuellen Beschwerden bis zu großflächigen Behandlungen.",
     ],
     benefits: [
-      "Hohe Leistung für tiefer liegende Strukturen",
+      "40 Watt Leistung für tiefer liegende Strukturen",
       "Kurze Behandlungszeiten auch bei großen Arealen",
       "Schmerzfreie Anwendung",
-      "Ergänzt den K-Laser Cube",
+      "Ohne Medikamente und ohne Operation",
+    ],
+    // Beschwerdebilder, bei denen wir den Laser einsetzen.
+    indications: [
+      "Nackenschmerzen",
+      "Kreuzschmerzen",
+      "Ischiasbeschwerden",
+      "Kiefergelenkerkrankungen",
+      "Ellenbogen und Gelenkschmerzen",
+      "Arthritis",
     ],
     serviceSlug: "lasertherapie-hannover",
-    metaTitle: "Chattanooga LightForce XLi in Hannover | Physiotherapie Zentrum Nord",
+    metaTitle: "Lasertherapie mit 40 Watt in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
-      "Lasertherapie mit dem Chattanooga LightForce XLi in Hannover List. Hohe Leistung für tiefe Strukturen und große Behandlungsflächen.",
+      "Hochleistungs-Lasertherapie mit dem Chattanooga LightForce XLi und 40 Watt in Hannover List. Bei Nacken, Kreuz und Gelenkschmerzen, Ischias und Arthritis.",
   },
   {
     slug: "bodyvibe-gravity-17",
@@ -551,7 +517,7 @@ export const jobs: Job[] = [
     title: "Physiotherapeut:in (m/w/d)",
     desc: "Sie arbeiten gern eigenverantwortlich in einem kleinen, herzlichen Team? Bei uns erwartet Sie eine gründliche Einarbeitung, echte Weiterbildung und eine sehr gute, verhandelbare Bezahlung. Ganz gleich, ob Sie schon Erfahrung mitbringen, idealerweise mit Manueller Therapie, oder gerade in den Beruf starten.",
     points: [
-      "Moderne Ausstattung mit Laser, Stoßwelle, HydroJet und Vibrationstraining",
+      "Moderne Ausstattung mit Laser, Stoßwelle und Vibrationstraining",
       "Breites Leistungsspektrum und abwechslungsreiche Behandlungen",
       "Faire, verhandelbare Bezahlung und geregelte Zeiten",
       "Vollzeit, Teilzeit oder Minijob, ganz nach Ihrer Lebenssituation",

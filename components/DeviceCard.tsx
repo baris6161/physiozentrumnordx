@@ -12,12 +12,18 @@ export default function DeviceCard({ device }: { device: Device }) {
         aria-label={`${device.name} ansehen`}
         className="relative block aspect-[4/3] border-b border-line bg-white"
       >
+        {/* Freigestellte Herstellerfotos werden eingepasst, Praxisaufnahmen
+            fuellen die Box, sonst stuenden sie mit weissen Balken darin. */}
         <Image
           src={device.img}
           alt={device.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
-          className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+          className={
+            device.fit === "contain"
+              ? "object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+              : "object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+          }
         />
         <span className="absolute right-3 top-3 rounded-full bg-ink px-2.5 py-1 text-[11px] font-bold tracking-[0.05em] text-white">
           EXKLUSIV IN HANNOVER

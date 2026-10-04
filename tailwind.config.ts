@@ -11,10 +11,14 @@ const config: Config = {
       colors: {
         ink: "#1A1A1A",
         ink2: "#33372f",
-        green: "#1D653B",
-        greenDark: "#164e2d",
-        greenTint: "#eaf1ec",
-        greenLine: "#c7ddce",
+        // Helleres Gruen zum Vergleich. Vorher: green #1D653B,
+        // greenDark #164e2d, greenTint #eaf1ec, greenLine #c7ddce.
+        // #2B8449 erreicht mit weisser Schrift 4.6:1 und bleibt damit
+        // knapp ueber der WCAG-AA-Grenze von 4.5:1.
+        green: "#2B8449",
+        greenDark: "#1D653B",
+        greenTint: "#edf5ef",
+        greenLine: "#cce3d4",
         paper: "#ffffff",
         sand: "#F4F6F4",
         sand2: "#eef1ee",

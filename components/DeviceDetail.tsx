@@ -125,7 +125,7 @@ export default function DeviceDetail({ device }: { device: Device }) {
           <aside className="min-w-[260px] flex-1 basis-[280px]">
             <Reveal delay={80}>
               <div className="rounded-card border border-line bg-sand p-6">
-                <h3 className="mb-4 text-[1.15rem]">Nutzen und Indikationen</h3>
+                <h3 className="mb-4 text-[1.15rem]">Nutzen</h3>
                 <div className="flex flex-col gap-3">
                   {device.benefits.map((b, i) => (
                     <div
@@ -139,12 +139,61 @@ export default function DeviceDetail({ device }: { device: Device }) {
                 </div>
               </div>
             </Reveal>
+            {device.indications && device.indications.length > 0 && (
+              <Reveal delay={120}>
+                <div className="mt-5 rounded-card border border-greenLine bg-greenTint p-6">
+                  <h3 className="mb-1 text-[1.15rem]">Wobei es hilft</h3>
+                  <p className="mb-4 text-[14px] text-muted">
+                    Beschwerdebilder, bei denen wir das Gerät einsetzen
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {device.indications.map((ind, i) => (
+                      <li
+                        key={i}
+                        className="rounded-full border border-greenLine bg-white px-3 py-1.5 text-[14px] font-semibold text-ink"
+                      >
+                        {ind}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            )}
           </aside>
         </div>
       </section>
 
+      {/* Video, falls hinterlegt. Lokal ausgeliefert statt per YouTube-Embed,
+          damit die Seite cookiefrei bleibt und kein Consent noetig wird. */}
+      {device.video && (
+        <section className="bg-sand">
+          <div className={`${container} py-14 md:py-16`}>
+            <Reveal>
+              <h2 className="mb-2 text-[clamp(1.5rem,2.4vw,2rem)]">
+                Das Gerät im Einsatz
+              </h2>
+              <p className="mb-7 max-w-[55ch] text-[1.05rem] text-muted">
+                Kurzes Video des Herstellers. So läuft eine Behandlung ab.
+              </p>
+              <div className="overflow-hidden rounded-card border border-line bg-black shadow-lg2">
+                <video
+                  controls
+                  preload="metadata"
+                  playsInline
+                  poster={device.img}
+                  className="block aspect-video w-full"
+                >
+                  <source src={device.video} type="video/mp4" />
+                  Ihr Browser kann dieses Video nicht abspielen.
+                </video>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* Weitere Geraete */}
-      <section className="bg-sand">
+      <section className="bg-paper">
         <div className={`${container} py-14 md:py-16`}>
           <Reveal>
             <h2 className="mb-7 text-[clamp(1.5rem,2.4vw,2rem)]">

@@ -11,23 +11,22 @@ const config: Config = {
       colors: {
         ink: "#1A1A1A",
         ink2: "#33372f",
-        // TEST: Limettengruen #90aa20 passend zum Praxislogo.
+        // Abgedunkeltes Limettengruen in Anlehnung an das Praxislogo.
+        // #657a17 erreicht gegen Weiss 4.8:1 und erfuellt damit WCAG AA
+        // (4.5:1). Das Logo-Gruen #90aa20 selbst kam nur auf 2.6:1 und
+        // war als Text und auf Buttons zu kontrastarm.
         //
-        // ZURUECKSETZEN auf den letzten Stand:
-        //   green: "#2B8449", greenDark: "#1D653B",
-        //   greenTint: "#edf5ef", greenLine: "#cce3d4",
-        // Urspruenglicher Stand davor:
-        //   green: "#1D653B", greenDark: "#164e2d",
-        //   greenTint: "#eaf1ec", greenLine: "#c7ddce",
-        //
-        // ACHTUNG Lesbarkeit: #90aa20 erreicht gegen Weiss nur 2.6:1.
-        // WCAG AA verlangt 4.5:1 fuer normalen Text und 3:1 fuer grosse
-        // Schrift. Gruener Text auf weiss und weisse Schrift auf gruenen
-        // Buttons sind damit beide zu kontrastarm.
-        green: "#90aa20",
-        greenDark: "#90aa20",
-        greenTint: "#f4f7e8",
-        greenLine: "#dde7b9",
+        // FRUEHERE STAENDE, falls zurueckgebaut werden soll:
+        //   Logo-Limette: green/greenDark #90aa20,
+        //                 greenTint #f4f7e8, greenLine #dde7b9
+        //   Helles Gruen: green #2B8449, greenDark #1D653B,
+        //                 greenTint #edf5ef, greenLine #cce3d4
+        //   Ursprung:     green #1D653B, greenDark #164e2d,
+        //                 greenTint #eaf1ec, greenLine #c7ddce
+        green: "#657a17",
+        greenDark: "#4e5e11",
+        greenTint: "#f2f5e6",
+        greenLine: "#d5dfb0",
         paper: "#ffffff",
         sand: "#F4F6F4",
         sand2: "#eef1ee",

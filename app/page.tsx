@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services, devices, steps, heroImage } from "@/lib/content";
-import { site } from "@/lib/site";
+import { site , hoursShort } from "@/lib/site";
 import { container, eyebrow, btnPrimary, btnSecondary } from "@/lib/ui";
 import Reveal from "@/components/Reveal";
 import HashScroll from "@/components/HashScroll";
@@ -52,7 +52,7 @@ export default function Home() {
                   Kasse und Selbstzahler
                 </span>
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
-                  Mo bis Do 8 bis 20 Uhr
+                  {hoursShort}
                 </span>
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
                   Terminpraxis

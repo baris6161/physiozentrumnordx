@@ -356,7 +356,7 @@ export interface GalleryItem {
 }
 
 export const gallery: GalleryItem[] = [
-  { img: IMG + "empfang.jpg", alt: "Empfang und Wartebereich" },
+  { img: IMG + "empfang-hero.jpg", alt: "Empfang und Wartebereich" },
   { img: IMG + "behandlungsraum.jpg", alt: "Behandlungsraum für Physiotherapie und Massage" },
   { img: IMG + "behandlungsraum-fenster.jpg", alt: "Heller Behandlungsraum am Fenster" },
   { img: IMG + "cardioraum.jpg", alt: "Cardio- und Vibrationstraining" },
@@ -364,7 +364,6 @@ export const gallery: GalleryItem[] = [
   { img: IMG + "sprossenwand.jpg", alt: "Sprossenwand und Pinofit Seilzüge" },
   { img: IMG + "trainingsflaeche.jpg", alt: "Freie Trainingsfläche mit Pinofit Seilzügen" },
   { img: IMG + "kletterwand.jpg", alt: "Kletterwand für Koordination und Kraft" },
-  { img: IMG + "geraetetraining.jpg", alt: "Gerätetraining und medizinische Trainingstherapie" },
   { img: IMG + "beinpresse.jpg", alt: "Beinpresse im Trainingsbereich" },
   { img: IMG + "kraftraum.jpg", alt: "Kraftraum mit Hanteln und Kettlebells" },
 ];

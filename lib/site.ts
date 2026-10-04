@@ -38,6 +38,11 @@ export const hours = [
   { d: "Sonntag", t: "geschlossen" },
 ];
 
+// Kurzfassung fuer den Hero-Chip. Stand vorher fest in app/page.tsx und nannte
+// nur Montag bis Donnerstag, was sich wie "freitags geschlossen" liest.
+// Hier pflegen, damit Hero und Kontaktbereich nicht auseinanderlaufen.
+export const hoursShort = "Mo bis Fr ab 8 Uhr";
+
 // Hauptnavigation. Anker-Links (/#...) springen auf der Startseite sanft
 // zur Sektion, von Unterseiten navigieren sie zuerst zur Startseite.
 export const nav = [

@@ -75,15 +75,16 @@ export const services: Service[] = [
   },
   {
     slug: "manualtherapie",
-    name: "Manualtherapie",
-    cat: "Kassenleistung",
+    name: "Manuthera",
+    cat: "Manualtherapie auf der Manuthera 242",
     img: IMG + "manualtherapie-raum.jpg",
     focus: "center",
     fit: "cover",
-    card: "Gezielte Untersuchung mit den Händen und sanfte Mobilisation von Gelenken, Muskeln und Nerven.",
-    lead: "Mit den Händen finden wir die Ursache und mobilisieren Gelenke, Muskeln und Nerven sanft und gezielt.",
+    card: "Manualtherapie auf der Manuthera 242. Sanfte Mobilisation von Gelenken, Muskeln und Nerven.",
+    lead: "Manualtherapie auf der Manuthera 242. Mit den Händen und der weltweit ersten Liege mit zwei synchronisierten Motoren finden wir die Ursache und mobilisieren gezielt.",
     body: [
       "In der Manualtherapie untersuchen wir Sie ausführlich mit den Händen und erarbeiten eine Vermutung zur Ursache Ihrer Beschwerden. Danach behandeln wir gezielt das betroffene Gelenk, den Muskel oder den Nerv.",
+      "Dabei arbeiten wir auf der Manuthera 242 von Lojer. Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander, sodass wir Ihre Wirbelsäule in Rotation, Seitneigung und Traktion bringen können, während Sie entspannt liegen bleiben.",
       "Blockierte Gelenke lösen wir mit sanften Techniken. Überbewegliche Gelenke stabilisieren wir mit passenden Übungen. So bringen wir das Zusammenspiel von Gelenken, Nerven und Muskeln wieder in Einklang.",
     ],
     benefits: [
@@ -92,11 +93,11 @@ export const services: Service[] = [
       "Lindert Kopfschmerzen",
       "Stabilisiert überbewegliche Gelenke",
     ],
-    device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren.",
+    device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren. Als Selbstzahlerleistung.",
     related: ["physiotherapie", "krankengymnastik", "massage"],
-    metaTitle: "Manualtherapie in Hannover | Physiotherapie Zentrum Nord",
+    metaTitle: "Manuthera 242 und Manualtherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
-      "Manualtherapie in Hannover List. Wir finden mit den Händen die Ursache und mobilisieren Gelenke, Muskeln und Nerven sanft und gezielt.",
+      "Manualtherapie auf der Manuthera 242 in Hannover List. Dreidimensionale Mobilisation von Gelenken, Muskeln und Nerven, sanft und gezielt.",
   },
   {
     slug: "massage",

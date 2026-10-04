@@ -68,7 +68,7 @@ export default function Gallery() {
               alt={g.alt}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"
-              className="object-cover object-left-top transition-transform duration-300 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
             />
           </button>
         ))}
@@ -79,7 +79,7 @@ export default function Gallery() {
           ref={overlayRef}
           tabIndex={-1}
           onClick={close}
-          className="fixed inset-0 z-[90] grid place-items-center bg-ink/90 p-4 outline-none sm:p-6"
+          className="fixed inset-0 z-[90] grid place-items-center bg-ink/95 p-0 outline-none sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-label={gallery[active].alt}
@@ -123,22 +123,52 @@ export default function Gallery() {
             ›
           </button>
 
+          {/* Das Bild laeuft ueber next/image statt ueber ein rohes img-Tag.
+              Vorher wurde die Originaldatei aus /images geladen, also 200 bis
+              350 KB JPEG ohne jede Optimierung. Jetzt liefert der Optimizer
+              AVIF beziehungsweise WebP in Bildschirmgroesse, was den Download
+              deutlich verkleinert und das Oeffnen spuerbar beschleunigt.
+
+              Alle Galeriebilder sind 16:9. Durch aspect-video ist der Rahmen
+              genau so gross wie das Bild. Ein Klick daneben trifft den
+              Hintergrund und schliesst, ein Klick aufs Bild nicht. */}
           <div
-            className="flex max-h-[85vh] max-w-[92vw] flex-col items-center gap-3"
+            className="relative aspect-video max-h-[90vh] w-full max-w-full sm:max-w-[94vw]"
             onClick={(e) => e.stopPropagation()}
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={gallery[active].img}
               alt={gallery[active].alt}
-              className="max-h-[78vh] max-w-full select-none rounded-xl shadow-lg2"
+              fill
+              sizes="100vw"
+              priority
+              className="select-none rounded-xl object-contain shadow-lg2"
               draggable={false}
             />
-            <div className="text-[13px] text-white/70">
-              {active + 1} / {gallery.length} · zum Blättern wischen
-            </div>
+          </div>
+
+          {/* Nachbarbilder unsichtbar vorladen, damit das Blaettern sofort
+              reagiert statt bei jedem Wisch neu zu laden. */}
+          <div aria-hidden className="pointer-events-none absolute h-px w-px overflow-hidden opacity-0">
+            {[
+              (active + 1) % gallery.length,
+              (active - 1 + gallery.length) % gallery.length,
+            ].map((i) => (
+              <Image
+                key={gallery[i].img}
+                src={gallery[i].img}
+                alt=""
+                width={16}
+                height={9}
+                sizes="100vw"
+              />
+            ))}
+          </div>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-4 text-center text-[13px] text-white/70">
+            {active + 1} / {gallery.length} · zum Blättern wischen
           </div>
         </div>
       )}

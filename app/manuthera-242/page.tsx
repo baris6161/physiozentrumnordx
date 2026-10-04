@@ -3,7 +3,7 @@ import { serviceBySlug } from "@/lib/content";
 import ServiceDetail from "@/components/ServiceDetail";
 import BackToHome from "@/components/BackToHome";
 
-const service = serviceBySlug("manualtherapie")!;
+const service = serviceBySlug("manuthera-242")!;
 
 export const metadata: Metadata = {
   title: service.metaTitle,

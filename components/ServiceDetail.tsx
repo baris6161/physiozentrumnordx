@@ -127,8 +127,37 @@ export default function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
+      {/* Video, falls hinterlegt. Lokal ausgeliefert statt per YouTube-Embed,
+          damit die Seite cookiefrei bleibt und kein Consent noetig wird. */}
+      {service.video && (
+        <section className="bg-sand">
+          <div className={`${container} py-14 md:py-16`}>
+            <Reveal>
+              <h2 className="mb-2 text-[clamp(1.5rem,2.4vw,2rem)]">
+                Das Gerät im Einsatz
+              </h2>
+              <p className="mb-7 max-w-[55ch] text-[1.05rem] text-muted">
+                Kurzes Video des Herstellers. So läuft eine Behandlung ab.
+              </p>
+              <div className="overflow-hidden rounded-card border border-line bg-black shadow-lg2">
+                <video
+                  controls
+                  preload="metadata"
+                  playsInline
+                  poster={service.img}
+                  className="block aspect-video w-full"
+                >
+                  <source src={service.video} type="video/mp4" />
+                  Ihr Browser kann dieses Video nicht abspielen.
+                </video>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* Verwandte Leistungen */}
-      <section className="bg-sand">
+      <section className="bg-paper">
         <div className={`${container} py-14 md:py-16`}>
           <Reveal>
             <h2 className="mb-7 text-[clamp(1.5rem,2.4vw,2rem)]">Verwandte Leistungen</h2>

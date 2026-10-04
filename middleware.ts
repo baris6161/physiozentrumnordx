@@ -7,6 +7,13 @@ import type { NextRequest } from "next/server";
 const REDIRECTS: Record<string, string> = {
   "/Jobs": "/jobs",
   "/Krankengymnastik": "/krankengymnastik",
+  // Die Manualtherapie-Seite heisst jetzt nach dem Geraet und liegt unter
+  // /manuthera-242. Der alte Slug stammt noch von der Duda-Seite und hat
+  // Rankings, die ueber den 301 mituebergehen.
+  "/manualtherapie": "/manuthera-242",
+  // Kurzzeitig gab es zusaetzlich eine eigene Geraeteseite. Leistung und
+  // Geraet sind dieselbe Sache und liegen jetzt zusammen.
+  "/geraete/manuthera-242": "/manuthera-242",
 };
 
 export function middleware(req: NextRequest) {
@@ -20,5 +27,10 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/Jobs", "/Krankengymnastik"],
+  matcher: [
+    "/Jobs",
+    "/Krankengymnastik",
+    "/manualtherapie",
+    "/geraete/manuthera-242",
+  ],
 };

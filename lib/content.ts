@@ -17,6 +17,7 @@ export interface Service {
   body: string[];
   benefits: string[];
   device: string | null;
+  video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
   related: string[]; // Slugs verwandter Leistungen
   metaTitle: string;
   metaDescription: string;
@@ -43,7 +44,7 @@ export const services: Service[] = [
       "Vorbeugung und Rehabilitation",
     ],
     device: null,
-    related: ["krankengymnastik", "manualtherapie", "massage"],
+    related: ["krankengymnastik", "manuthera-242", "massage"],
     metaTitle: "Physiotherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Klassische Physiotherapie in Hannover List. Mit gezielter Krankengymnastik und einem geschulten Team behandeln wir Ihr Anliegen zielgerichtet.",
@@ -68,13 +69,13 @@ export const services: Service[] = [
       "Reha nach Operation oder Unfall",
     ],
     device: null,
-    related: ["physiotherapie", "manualtherapie", "vibrationsplatten-training"],
+    related: ["physiotherapie", "manuthera-242", "vibrationsplatten-training"],
     metaTitle: "Krankengymnastik und Reha in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Krankengymnastik und Reha in Hannover List bei akuten Bewegungseinschränkungen und in der Genesung. Von Orthopädie bis Neurologie.",
   },
   {
-    slug: "manualtherapie",
+    slug: "manuthera-242",
     name: "Manuthera 242",
     cat: "Manualtherapie auf der Manuthera 242",
     img: IMG + "manualtherapie-raum.jpg",
@@ -94,6 +95,7 @@ export const services: Service[] = [
       "Stabilisiert überbewegliche Gelenke",
     ],
     device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren. Als Selbstzahlerleistung.",
+    video: "/videos/manuthera-242.mp4",
     related: ["physiotherapie", "krankengymnastik", "massage"],
     metaTitle: "Manuthera 242 und Manualtherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
@@ -119,7 +121,7 @@ export const services: Service[] = [
       "Auch als Wellnessleistung",
     ],
     device: null,
-    related: ["physiotherapie", "schroepftherapie", "manualtherapie"],
+    related: ["physiotherapie", "schroepftherapie", "manuthera-242"],
     metaTitle: "Medizinische Massage in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Medizinische Massage in Hannover List gegen Verspannungen in Rücken und Nacken. Klassische Massage, Reflexzonen und Bindegewebe, auch als Wellness.",
@@ -245,7 +247,7 @@ export const services: Service[] = [
       "Profi-Werkzeuge aus chirurgischem Edelstahl",
     ],
     device: "Faszientools aus chirurgischem Edelstahl.",
-    related: ["massage", "manualtherapie", "physiotherapie"],
+    related: ["massage", "manuthera-242", "physiotherapie"],
     metaTitle: "Faszienbehandlung in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Instrumentengestützte Faszienbehandlung in Hannover mit professionellen Edelstahl-Werkzeugen. Löst verklebte Faszien bei Verspannungen und Bewegungseinschränkungen.",
@@ -270,7 +272,7 @@ export const services: Service[] = [
       "Angenehm als Vorbereitung oder Ergänzung",
     ],
     device: null,
-    related: ["massage", "schroepftherapie", "manualtherapie"],
+    related: ["massage", "schroepftherapie", "manuthera-242"],
     metaTitle: "Wärmetherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Wärmetherapie in Hannover mit TDP-Mineralwärmelampe. Wohltuende Tiefenwärme, lockert Muskeln und fördert die Durchblutung.",
@@ -311,9 +313,10 @@ export const devices: Device[] = [
     img: IMG + "manualtherapie-raum.jpg",
     focus: "center",
     fit: "cover",
-    ownPage: true,
-    // Herstellervideo von Lojer, lokal ausgeliefert statt per YouTube.
-    video: "/videos/manuthera-242.mp4",
+    // Keine eigene Geraeteseite mehr: Leistung und Geraet sind dieselbe
+    // Sache und standen vorher als zwei Seiten gleichen Namens in
+    // Konkurrenz zueinander. Alles liegt jetzt unter /manuthera-242.
+    ownPage: false,
     desc: "Die weltweit erste Liege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Dekompression.",
     lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind.",
     body: [
@@ -329,7 +332,7 @@ export const devices: Device[] = [
       "Auch bei akuten Beschwerden einsetzbar",
       "Ausschließlich als Selbstzahlerleistung",
     ],
-    serviceSlug: "manualtherapie",
+    serviceSlug: "manuthera-242",
     metaTitle: "Manuthera 242 in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
       "Behandlung auf der Manuthera 242 von Lojer in Hannover List. Dreidimensionale Mobilisation, Traktion und sanfte Entlastung der Wirbelsäule.",

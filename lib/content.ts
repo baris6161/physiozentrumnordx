@@ -343,8 +343,8 @@ export const devices: Device[] = [
   {
     name: "HydroJet",
     tag: "Wasser-Massagebett",
-    img: IMG + "krankengymnsatik-in-hannover_praxis_10-558w.jpg",
-    focus: "left-top",
+    img: IMG + "hydrojet.jpg",
+    focus: "center",
     desc: "Wärme und Wasserdruck-Massage für tiefe Entspannung, ganz ohne sich auskleiden zu müssen.",
     slug: "massage",
   },
@@ -362,6 +362,7 @@ export const gallery: GalleryItem[] = [
   { img: IMG + "cardioraum.jpg", alt: "Cardio- und Vibrationstraining" },
   { img: IMG + "trainingsraum.jpg", alt: "Trainingsraum mit Seilzuggeräten" },
   { img: IMG + "sprossenwand.jpg", alt: "Sprossenwand und Pinofit Seilzüge" },
+  { img: IMG + "trainingsflaeche.jpg", alt: "Freie Trainingsfläche mit Pinofit Seilzügen" },
   { img: IMG + "kletterwand.jpg", alt: "Kletterwand für Koordination und Kraft" },
   { img: IMG + "geraetetraining.jpg", alt: "Gerätetraining und medizinische Trainingstherapie" },
   { img: IMG + "beinpresse.jpg", alt: "Beinpresse im Trainingsbereich" },

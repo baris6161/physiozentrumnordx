@@ -54,9 +54,6 @@ export default function Home() {
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
                   {hoursShort}
                 </span>
-                <span className="rounded-full border border-line bg-white px-3 py-1.5">
-                  Terminpraxis
-                </span>
               </div>
             </Reveal>
           </div>
@@ -232,7 +229,11 @@ export default function Home() {
                   Wir sind eine Terminpraxis. So vermeiden Sie lange Wartezeiten.
                 </p>
               </div>
-              <div className="flex gap-3">
+              {/* Auf dem Handy volle Breite, damit sich beide Buttons den Platz
+                  teilen und links wie rechts derselbe Rand bleibt. Ohne w-full
+                  wird die Zeile so breit wie ihr Inhalt und schiebt sich rechts
+                  ueber den Innenabstand der Karte hinaus. */}
+              <div className="flex w-full gap-3 sm:w-auto">
                 <a
                   href={site.phoneHref}
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-btn bg-green px-5 py-3.5 text-[16px] font-bold text-white transition-colors hover:bg-greenDark sm:flex-none sm:px-6"

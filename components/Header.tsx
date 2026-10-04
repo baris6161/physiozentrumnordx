@@ -56,13 +56,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-md backdrop-saturate-150">
       {/* Recruiting-Banner */}
       <div className="bg-green text-white">
-        <div className="mx-auto flex max-w-container flex-wrap items-center justify-center gap-x-4 gap-y-1 px-6 py-2 text-center text-[13.5px] font-semibold">
-          <span className="opacity-95">
-            Wir suchen Verstärkung. Werde Teil unseres Teams.
+        {/* Muss auf dem Handy in eine Zeile passen. Bei zwei Zeilen rutscht
+            der gesamte Hero nach unten und das Bild liegt unter der Kante.
+            Daher kein Umbruch und auf kleinen Schirmen ein kurzer Text. */}
+        <div className="mx-auto flex max-w-container flex-nowrap items-center justify-center gap-x-2 px-4 py-2 text-center text-[12.5px] font-semibold sm:gap-x-4 sm:px-6 sm:text-[13.5px]">
+          <span className="whitespace-nowrap opacity-95">
+            Wir suchen Verstärkung.
+            <span className="hidden sm:inline"> Werde Teil unseres Teams.</span>
           </span>
           <Link
             href="/jobs"
-            className="font-bold underline underline-offset-[3px]"
+            className="whitespace-nowrap font-bold underline underline-offset-[3px]"
           >
             Jetzt bewerben <span aria-hidden="true">&rarr;</span>
           </Link>

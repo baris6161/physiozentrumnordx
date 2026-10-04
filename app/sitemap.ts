@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
-import { services } from "@/lib/content";
+import { services, devicesWithPage } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url.replace(/\/$/, "");
@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "/", priority: 1 },
     ...services.map((s) => ({ path: `/${s.slug}`, priority: 0.8 })),
+    ...devicesWithPage.map((d) => ({ path: `/geraete/${d.slug}`, priority: 0.7 })),
     { path: "/patienteninformation", priority: 0.6 },
     { path: "/jobs", priority: 0.6 },
     { path: "/kontakt", priority: 0.7 },

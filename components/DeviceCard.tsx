@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Device } from "@/lib/content";
+import { type Device, deviceHref } from "@/lib/content";
 import { ArrowRight } from "./Icons";
 
 /** Spezialgeraete-Karte. Einheitliche Bildbox (contain auf Weiss) => alle Karten gleich hoch. */
@@ -8,7 +8,7 @@ export default function DeviceCard({ device }: { device: Device }) {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-sm2 transition duration-200 hover:-translate-y-1 hover:border-greenLine hover:shadow-md2">
       <Link
-        href={`/${device.slug}`}
+        href={deviceHref(device)}
         aria-label={`${device.name} ansehen`}
         className="relative block aspect-[4/3] border-b border-line bg-white"
       >
@@ -32,7 +32,7 @@ export default function DeviceCard({ device }: { device: Device }) {
           {device.desc}
         </p>
         <Link
-          href={`/${device.slug}`}
+          href={deviceHref(device)}
           className="mt-4 inline-flex items-center gap-1 text-[14.5px] font-bold text-greenDark hover:text-ink"
         >
           Zur Behandlung <ArrowRight className="h-4 w-4" />

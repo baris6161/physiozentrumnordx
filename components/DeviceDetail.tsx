@@ -1,35 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type Service, serviceBySlug } from "@/lib/content";
+import {
+  type Device,
+  devicesWithPage,
+  deviceHref,
+  serviceBySlug,
+} from "@/lib/content";
 import { site } from "@/lib/site";
-import { container, eyebrow, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
+import { container, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
 import { ArrowRight, Check, Spark } from "./Icons";
 
-export default function ServiceDetail({ service }: { service: Service }) {
+/**
+ * Detailseite eines Spezialgeraets unter /geraete/<slug>.
+ * Aufbau bewusst nah an ServiceDetail, damit sich die Seiten gleich anfuehlen.
+ */
+export default function DeviceDetail({ device }: { device: Device }) {
   const heroImg =
-    service.fit === "contain"
-      ? "object-contain bg-white p-4"
-      : `object-cover ${focusClass(service.focus)}`;
-  const related = service.related
-    .map((slug) => serviceBySlug(slug))
-    .filter((s): s is Service => Boolean(s));
+    device.fit === "contain"
+      ? "object-contain bg-white p-6"
+      : `object-cover ${focusClass(device.focus)}`;
+  const service = serviceBySlug(device.serviceSlug);
+  const others = devicesWithPage.filter((d) => d.slug !== device.slug).slice(0, 3);
 
   return (
     <>
       {/* Hero */}
       <section className="bg-sand">
         <div className={`${container} pt-2`}>
-          <nav className="flex items-center gap-2 py-3 text-[14px] text-muted">
+          <nav className="flex flex-wrap items-center gap-2 py-3 text-[14px] text-muted">
             <Link href="/" className="hover:text-greenDark">
               Home
             </Link>
             <span className="opacity-60">/</span>
-            <Link href="/#leistungen" className="hover:text-greenDark">
-              Leistungen
+            <Link href="/#spezialgeraete" className="hover:text-greenDark">
+              Spezialgeräte
             </Link>
             <span className="opacity-60">/</span>
-            <span className="font-semibold text-ink">{service.name}</span>
+            <span className="font-semibold text-ink">{device.name}</span>
           </nav>
         </div>
         <div
@@ -38,13 +46,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
           <div className="min-w-[290px] flex-1 basis-[380px]">
             <Reveal>
               <span className="mb-4 inline-block rounded-full border border-greenLine bg-greenTint px-3 py-1.5 text-[13px] font-bold text-greenDark">
-                {service.cat}
+                {device.tag}
               </span>
               <h1 className="text-[clamp(2.3rem,4.6vw,3.6rem)] font-extrabold">
-                {service.name}
+                {device.name}
               </h1>
               <p className="mt-5 max-w-[42ch] text-[clamp(1.1rem,1.6vw,1.3rem)] text-ink2">
-                {service.lead}
+                {device.lead}
               </p>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
                   daher Hero-CTAs erst ab Desktop (lg) zeigen. */}
@@ -60,13 +68,10 @@ export default function ServiceDetail({ service }: { service: Service }) {
           </div>
           <div className="min-w-[290px] flex-1 basis-[360px]">
             <Reveal delay={80}>
-              {/* 16:9 wie die Bilddateien selbst. Bei 4:3 wurden links und rechts
-                  je 12,5 Prozent abgeschnitten, wodurch mittig aufgenommene
-                  Geraete aus der Mitte rutschten. */}
               <div className="relative aspect-[16/9] overflow-hidden rounded-card bg-sand2 shadow-lg2">
                 <Image
-                  src={service.img}
-                  alt={service.name}
+                  src={device.img}
+                  alt={device.name}
                   fill
                   sizes="(max-width: 1024px) 100vw, 560px"
                   className={heroImg}
@@ -78,33 +83,41 @@ export default function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* Behandlung + Nutzen */}
+      {/* So arbeitet das Geraet + Nutzen */}
       <section className="bg-paper">
         <div className={`${container} flex flex-wrap gap-8 py-14 md:gap-16 md:py-20`}>
           <div className="min-w-[300px] flex-[2] basis-[440px]">
             <Reveal>
               <h2 className="mb-5 text-[clamp(1.6rem,2.6vw,2.1rem)]">
-                Behandlung und Wirkung
+                So arbeitet das Gerät
               </h2>
               <div className="flex flex-col gap-4 text-[1.08rem] leading-[1.72] text-ink2">
-                {service.body.map((p, i) => (
+                {device.body.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
             </Reveal>
-            {service.device && (
+            {service && (
               <Reveal delay={60}>
-                <div className="mt-7 flex items-start gap-4 rounded-card border border-greenLine bg-greenTint px-6 py-5">
+                <Link
+                  href={`/${service.slug}`}
+                  className="mt-7 flex items-start gap-4 rounded-card border border-greenLine bg-greenTint px-6 py-5 transition-colors hover:border-green"
+                >
                   <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-xl bg-green text-white">
                     <Spark className="h-5 w-5" />
                   </span>
                   <div>
                     <div className="text-[13px] font-bold uppercase tracking-[0.05em] text-greenDark">
-                      Eingesetztes Spezialgerät
+                      Eingesetzt bei
                     </div>
-                    <p className="mt-1.5 font-semibold text-ink">{service.device}</p>
+                    <p className="mt-1.5 font-semibold text-ink">
+                      {service.name}{" "}
+                      <span className="font-bold text-greenDark">
+                        Zur Leistung &rarr;
+                      </span>
+                    </p>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             )}
           </div>
@@ -114,8 +127,11 @@ export default function ServiceDetail({ service }: { service: Service }) {
               <div className="rounded-card border border-line bg-sand p-6">
                 <h3 className="mb-4 text-[1.15rem]">Nutzen und Indikationen</h3>
                 <div className="flex flex-col gap-3">
-                  {service.benefits.map((b, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-[15px] leading-[1.45]">
+                  {device.benefits.map((b, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-2.5 text-[15px] leading-[1.45]"
+                    >
                       <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green" />
                       <span>{b}</span>
                     </div>
@@ -127,34 +143,39 @@ export default function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* Verwandte Leistungen */}
+      {/* Weitere Geraete */}
       <section className="bg-sand">
         <div className={`${container} py-14 md:py-16`}>
           <Reveal>
-            <h2 className="mb-7 text-[clamp(1.5rem,2.4vw,2rem)]">Verwandte Leistungen</h2>
+            <h2 className="mb-7 text-[clamp(1.5rem,2.4vw,2rem)]">
+              Weitere Spezialgeräte
+            </h2>
           </Reveal>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((r, i) => (
-              <Reveal key={r.slug} delay={i * 70} className="h-full">
+            {others.map((d, i) => (
+              <Reveal key={d.slug} delay={i * 70} className="h-full">
                 <Link
-                  href={`/${r.slug}`}
+                  href={deviceHref(d)}
                   className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-sm2 transition duration-200 hover:-translate-y-1 hover:shadow-md2"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-sand2">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-white">
                     <Image
-                      src={r.img}
-                      alt={r.name}
+                      src={d.img}
+                      alt={d.name}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className={
-                        r.fit === "contain"
-                          ? "object-contain bg-white p-3"
-                          : `object-cover ${focusClass(r.focus)} transition-transform duration-300 group-hover:scale-[1.04]`
+                        d.fit === "contain"
+                          ? "object-contain p-3"
+                          : `object-cover ${focusClass(d.focus)} transition-transform duration-300 group-hover:scale-[1.04]`
                       }
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-[1.15rem]">{r.name}</h3>
+                    <div className="text-[12.5px] font-bold uppercase tracking-[0.06em] text-greenDark">
+                      {d.tag}
+                    </div>
+                    <h3 className="mt-1.5 text-[1.15rem]">{d.name}</h3>
                     <span className="mt-2.5 inline-flex items-center gap-1 text-[14px] font-bold text-greenDark">
                       Ansehen <ArrowRight className="h-4 w-4" />
                     </span>

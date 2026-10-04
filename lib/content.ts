@@ -282,73 +282,209 @@ export const serviceBySlug = (slug: string) =>
 // (gleiche Box, object-contain auf Weiss) dargestellt, damit alle Karten
 // gleich hoch sind und Ueberschriften auf einer Linie liegen.
 export interface Device {
+  slug: string; // eigener Geraete-Slug, Seite liegt unter /geraete/<slug>
   name: string;
   tag: string;
   img: string;
   focus: Focus;
-  desc: string;
-  slug: string;
+  fit: Fit; // "contain" fuer freigestellte Herstellerfotos, "cover" fuer Praxisaufnahmen
+  ownPage: boolean; // eigene Detailseite unter /geraete/<slug>?
+  desc: string; // Kurztext auf der Karte
+  lead: string; // Einleitung auf der Geraeteseite
+  body: string[];
+  benefits: string[];
+  serviceSlug: string; // Leistung, zu der das Geraet gehoert
+  metaTitle: string;
+  metaDescription: string;
 }
 
 // Neuere/Flaggschiff-Geraete zuerst, bewaehrte danach (bleiben erhalten).
 export const devices: Device[] = [
   {
+    slug: "manuthera-242",
     name: "Manuthera 242",
     tag: "Behandlungsliege von Lojer",
     img: IMG + "manuthera-242.jpg",
     focus: "center",
+    fit: "contain",
+    ownPage: true,
     desc: "Die weltweit erste Liege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Dekompression.",
-    slug: "manualtherapie",
+    lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind.",
+    body: [
+      "Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander. Dadurch können wir Ihre Wirbelsäule gezielt in Rotation, Seitneigung und Traktion bringen, während Sie entspannt liegen bleiben.",
+      "Für Sie bedeutet das vor allem eines: Sie müssen sich während der Behandlung nicht aktiv halten oder umlagern. Wir arbeiten mit der Liege statt gegen Ihr Körpergewicht und können so auch bei akuten Beschwerden sehr sanft vorgehen.",
+      "Wir setzen die Manuthera vor allem in der Manualtherapie ein, bei Nacken und Rückenbeschwerden sowie zur Entlastung der Bandscheiben.",
+    ],
+    benefits: [
+      "Dreidimensionale Mobilisation der Wirbelsäule",
+      "Sanfte Traktion und Entlastung",
+      "Entlastet Bandscheiben und Facettengelenke",
+      "Auch bei akuten Beschwerden einsetzbar",
+    ],
+    serviceSlug: "manualtherapie",
+    metaTitle: "Manuthera 242 in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "Behandlung auf der Manuthera 242 von Lojer in Hannover List. Dreidimensionale Mobilisation, Traktion und sanfte Entlastung der Wirbelsäule.",
   },
   {
-    name: "Chattanooga LightForce XLi",
-    tag: "Hochleistungslaser Klasse 4",
-    img: IMG + "chattanooga-lightforce-xli.jpg",
-    focus: "center",
-    desc: "40-Watt-Laser mit Touchscreen. Tief wirksam gegen Schmerzen an Muskeln, Sehnen und Gelenken.",
-    slug: "lasertherapie-hannover",
-  },
-  {
-    name: "Galileo",
-    tag: "Vibrationstraining mit Display",
-    img: IMG + "galileo-vibrationstraining.jpg",
-    focus: "center",
-    desc: "Seitenwechselndes Vibrationstraining mit Personal-Trainer-Display, das Sie durch jede Übung führt.",
-    slug: "vibrationsplatten-training",
-  },
-  {
-    name: "Swiss DolorClast",
-    tag: "Radiale Stoßwellentherapie",
-    img: IMG + "EMS_Swiss_DolorClast_Master_Deivice_Cart_side-1920w.jpg",
-    focus: "center",
-    desc: "Präzise Druckwellen gegen chronische Schmerzen, Fersensporn und gereizte Sehnenansätze.",
-    slug: "stosswellentherapie-hannover",
-  },
-  {
-    name: "K-Laser Cube",
-    tag: "Hochleistungslaser Klasse 4",
-    img: IMG + "Laser_1-1920w.JPG",
-    focus: "center",
-    desc: "Tief wirksames Licht mit zwei Wellenlängen, medikamentenfrei und einer der stärksten seiner Klasse.",
-    slug: "lasertherapie-hannover",
-  },
-  {
-    name: "BodyVibe Gravity 17",
-    tag: "Vibrationsplatten Training",
-    img: IMG + "bodyvibe-gravity17.jpg",
-    focus: "center",
-    desc: "Bis zu 97 Prozent Muskelaktivierung in kurzen, gelenkschonenden Trainingseinheiten.",
-    slug: "vibrationsplatten-training",
-  },
-  {
+    slug: "hydrojet",
     name: "HydroJet",
     tag: "Wasser-Massagebett",
     img: IMG + "hydrojet.jpg",
     focus: "center",
+    fit: "cover",
+    ownPage: true,
     desc: "Wärme und Wasserdruck-Massage für tiefe Entspannung, ganz ohne sich auskleiden zu müssen.",
-    slug: "massage",
+    lead: "Auf dem HydroJet massieren warme Wasserstrahlen Ihren Rücken, ohne dass Sie mit dem Wasser in Berührung kommen. Sie bleiben dabei vollständig bekleidet.",
+    body: [
+      "Sie legen sich auf eine wasserdichte Liegefläche. Darunter bewegen sich Düsen, die warmes Wasser mit einstellbarem Druck gegen die Folie strahlen. Die Massage erreicht so den ganzen Rücken, vom Nacken bis zu den Beinen.",
+      "Druck, Tempo und Zonen lassen sich einstellen. Wer empfindlich ist, bekommt eine sanfte Wellenmassage, wer tiefere Verspannungen hat, eine kräftigere Anwendung. Die Wärme entspannt die Muskulatur zusätzlich.",
+      "Der HydroJet eignet sich gut als Vorbereitung auf eine manuelle Behandlung, weil die Muskulatur danach deutlich besser löslich ist. Viele nutzen ihn auch einfach zum Abschalten.",
+    ],
+    benefits: [
+      "Vollständig bekleidet, kein Umziehen nötig",
+      "Wärme und Wasserdruck in einer Anwendung",
+      "Druck und Intensität individuell einstellbar",
+      "Gute Vorbereitung auf manuelle Behandlungen",
+    ],
+    serviceSlug: "massage",
+    metaTitle: "HydroJet Wassermassage in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "HydroJet Wasser-Massagebett in Hannover List. Warme Wasserstrahl-Massage für den Rücken, ganz ohne sich auskleiden zu müssen.",
+  },
+  {
+    slug: "galileo-fit",
+    name: "Galileo Fit",
+    tag: "Seitenwechselndes Vibrationstraining",
+    img: IMG + "galileo-fit.jpg",
+    focus: "center",
+    fit: "cover",
+    ownPage: true,
+    desc: "Seitenwechselnde Vibration löst reflexartige Muskelkontraktionen aus. Mit Personal-Trainer-Display.",
+    lead: "Beim Galileo Fit kippt die Trainingsplatte seitenwechselnd um eine Mittelachse, ähnlich dem Bewegungsmuster beim Gehen. Der Körper antwortet darauf mit reflexartigen Muskelkontraktionen.",
+    body: [
+      "Anders als bei rein auf und ab schwingenden Platten arbeitet der Galileo mit einer Wippbewegung. Das Becken wird abwechselnd angehoben und gesenkt, wodurch die Muskulatur reflektorisch gegenarbeitet, viele hundert Mal pro Minute.",
+      "Über das Display stellen wir Frequenz und Dauer passend zu Ihrem Ziel ein. Niedrige Frequenzen nutzen wir für Koordination und Beweglichkeit, höhere für Kraft.",
+      "Eine Einheit dauert nur wenige Minuten. Das Training ist gelenkschonend und eignet sich damit auch für Menschen, denen klassisches Gerätetraining zu belastend ist.",
+    ],
+    benefits: [
+      "Seitenwechselnde Bewegung ähnlich dem Gehen",
+      "Reflexartige Muskelaktivierung",
+      "Frequenz und Dauer individuell einstellbar",
+      "Kurze, gelenkschonende Einheiten",
+    ],
+    serviceSlug: "vibrationsplatten-training",
+    metaTitle: "Galileo Vibrationstraining in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "Galileo Fit Vibrationstraining in Hannover List. Seitenwechselnde Vibration für reflexartige Muskelaktivierung, kurz und gelenkschonend.",
+  },
+  {
+    slug: "swiss-dolorclast",
+    name: "Swiss DolorClast",
+    tag: "Radiale Stoßwellentherapie von EMS",
+    img: IMG + "EMS_Swiss_DolorClast_Master_Deivice_Cart_side-1920w.jpg",
+    focus: "center",
+    fit: "contain",
+    ownPage: true,
+    desc: "Radiale Druckwellen regen die Durchblutung an und wecken die Selbstheilungskräfte im Gewebe.",
+    lead: "Der Swiss DolorClast von EMS erzeugt radiale Druckwellen, die wir über ein Handstück durch die Haut ins Gewebe leiten.",
+    body: [
+      "Ein Projektil wird im Handstück beschleunigt und trifft auf einen Applikator. Die dabei entstehende Druckwelle breitet sich im Gewebe aus und erreicht so auch tiefer liegende Strukturen wie Sehnenansätze.",
+      "Die stärkere Durchblutung verbessert den Stoffwechsel in der behandelten Region und aktiviert die Selbstheilungskräfte. Typische Einsatzgebiete sind Fersensporn, Tennis und Golferellenbogen sowie hartnäckige Triggerpunkte.",
+      "Eine Sitzung dauert nur wenige Minuten. Meist sind ein bis sechs Anwendungen in kurzen Abständen nötig, ohne Operation und ohne Medikamente.",
+    ],
+    benefits: [
+      "Bei Fersensporn und Achillesbeschwerden",
+      "Bei Tennis und Golferellenbogen",
+      "Löst hartnäckige Triggerpunkte",
+      "Nur wenige Minuten pro Sitzung",
+    ],
+    serviceSlug: "stosswellentherapie-hannover",
+    metaTitle: "Swiss DolorClast Stoßwelle in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "Radiale Stoßwellentherapie mit dem Swiss DolorClast von EMS in Hannover List. Bei Fersensporn, Tennisellenbogen und Triggerpunkten.",
+  },
+  {
+    slug: "k-laser-cube",
+    name: "K-Laser Cube",
+    tag: "Hochleistungslaser",
+    img: IMG + "Laser_1-1920w.JPG",
+    focus: "center",
+    fit: "contain",
+    ownPage: true,
+    desc: "Laserlicht dringt tief ins Gewebe ein und unterstützt Heilung und Schmerzlinderung.",
+    lead: "Der K-Laser Cube arbeitet mit mehreren Wellenlängen gleichzeitig und erreicht dadurch unterschiedlich tief liegende Gewebeschichten.",
+    body: [
+      "Laserlicht wird im Gewebe von den Zellen aufgenommen und regt dort den Stoffwechsel an. Die Durchblutung steigt, der Abtransport von Entzündungsstoffen verbessert sich.",
+      "Die Anwendung ist schmerzfrei. Sie spüren an der behandelten Stelle meist nur eine angenehme Wärme. Dauer und Leistung stellen wir je nach Region und Beschwerdebild ein.",
+      "Wir setzen den Laser bei Sehnen und Gelenkbeschwerden ein, bei Verletzungen der Muskulatur und begleitend nach Operationen.",
+    ],
+    benefits: [
+      "Schmerzfreie Anwendung",
+      "Mehrere Wellenlängen für verschiedene Gewebetiefen",
+      "Bei Sehnen und Gelenkbeschwerden",
+      "Begleitend nach Verletzung und Operation",
+    ],
+    serviceSlug: "lasertherapie-hannover",
+    metaTitle: "K-Laser Cube Lasertherapie in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "Hochleistungs-Lasertherapie mit dem K-Laser Cube in Hannover List. Schmerzfrei, bei Sehnen und Gelenkbeschwerden sowie nach Verletzungen.",
+  },
+  {
+    slug: "chattanooga-lightforce-xli",
+    name: "Chattanooga LightForce XLi",
+    tag: "Hochleistungslaser",
+    img: IMG + "chattanooga-lightforce-xli.jpg",
+    focus: "center",
+    fit: "contain",
+    ownPage: true,
+    desc: "Leistungsstarke Lasertherapie für tiefer liegende Strukturen und größere Behandlungsflächen.",
+    lead: "Der LightForce XLi von Chattanooga ist ein Hochleistungslaser, mit dem sich auch größere Areale und tiefer liegende Strukturen in kurzer Zeit behandeln lassen.",
+    body: [
+      "Durch die höhere Leistung bringen wir in derselben Zeit mehr Lichtenergie ins Gewebe als mit schwächeren Geräten. Das verkürzt die Behandlungsdauer spürbar, gerade bei großen Regionen wie dem unteren Rücken.",
+      "Das Handstück wird während der Anwendung über die Haut geführt. Sie spüren dabei eine deutliche, angenehme Wärme. Die Behandlung bleibt schmerzfrei.",
+      "Zusammen mit dem K-Laser Cube deckt der XLi ein breites Spektrum ab, von kleinen punktuellen Beschwerden bis zu großflächigen Behandlungen.",
+    ],
+    benefits: [
+      "Hohe Leistung für tiefer liegende Strukturen",
+      "Kurze Behandlungszeiten auch bei großen Arealen",
+      "Schmerzfreie Anwendung",
+      "Ergänzt den K-Laser Cube",
+    ],
+    serviceSlug: "lasertherapie-hannover",
+    metaTitle: "Chattanooga LightForce XLi in Hannover | Physiotherapie Zentrum Nord",
+    metaDescription:
+      "Lasertherapie mit dem Chattanooga LightForce XLi in Hannover List. Hohe Leistung für tiefe Strukturen und große Behandlungsflächen.",
+  },
+  {
+    slug: "bodyvibe-gravity-17",
+    name: "BodyVibe Gravity 17",
+    tag: "Vibrationsplatten Training",
+    img: IMG + "bodyvibe-gravity17.jpg",
+    focus: "center",
+    fit: "cover",
+    // Keine eigene Seite: der BodyVibe wird auf der Leistungsseite
+    // Vibrationsplatten Training mitbehandelt, die Karte verlinkt dorthin.
+    ownPage: false,
+    desc: "Ganzkörper-Vibrationstraining für Tiefenmuskulatur, Stabilität und Durchblutung.",
+    lead: "Auf dem BodyVibe Gravity 17 trainieren Sie den ganzen Körper über Vibration.",
+    body: [],
+    benefits: [],
+    serviceSlug: "vibrationsplatten-training",
+    metaTitle: "",
+    metaDescription: "",
   },
 ];
+
+export const deviceBySlug = (slug: string) =>
+  devices.find((d) => d.slug === slug);
+
+/** Geraete mit eigener Detailseite unter /geraete/<slug>. */
+export const devicesWithPage = devices.filter((d) => d.ownPage);
+
+/** Ziel der Geraetekarte: eigene Seite, sonst die zugehoerige Leistung. */
+export const deviceHref = (d: Device) =>
+  d.ownPage ? `/geraete/${d.slug}` : `/${d.serviceSlug}`;
 
 export interface GalleryItem {
   img: string;
@@ -362,7 +498,6 @@ export const gallery: GalleryItem[] = [
   { img: IMG + "cardioraum.jpg", alt: "Cardio- und Vibrationstraining" },
   { img: IMG + "trainingsraum.jpg", alt: "Trainingsraum mit Seilzuggeräten" },
   { img: IMG + "sprossenwand.jpg", alt: "Sprossenwand und Pinofit Seilzüge" },
-  { img: IMG + "trainingsflaeche.jpg", alt: "Freie Trainingsfläche mit Pinofit Seilzügen" },
   { img: IMG + "kletterwand.jpg", alt: "Kletterwand für Koordination und Kraft" },
   { img: IMG + "beinpresse.jpg", alt: "Beinpresse im Trainingsbereich" },
   { img: IMG + "kraftraum.jpg", alt: "Kraftraum mit Hanteln und Kettlebells" },

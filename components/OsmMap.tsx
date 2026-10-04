@@ -1,17 +1,16 @@
 import { site } from "@/lib/site";
 
 /**
- * Google-Maps-Einbettung mit dem korrekten Standort-Pin.
- * Hinweis: Google Maps laedt Inhalte von Google (ggf. Cookies). Fuer strenge
- * DSGVO-Konformitaet sollte die Karte idealerweise erst nach Einwilligung geladen
- * werden. Auf ausdruecklichen Wunsch des Praxisinhabers hier direkt eingebunden.
+ * Cookielose OpenStreetMap-Einbettung. Setzt keine Cookies und laedt keine
+ * Google-Inhalte, daher DSGVO-freundlich und ohne Consent-Banner nutzbar.
+ * Der "Route planen"-Link oeffnet Google Maps erst nach bewusstem Nutzerklick.
  */
 export default function OsmMap() {
   return (
     <div className="overflow-hidden rounded-card border border-line">
       <iframe
         title={`Standort ${site.name}, ${site.address.street}, ${site.address.zip} ${site.address.city}`}
-        src={site.googleMapsEmbed}
+        src={site.osmEmbed}
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen

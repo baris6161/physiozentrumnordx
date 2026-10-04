@@ -1,9 +1,9 @@
-// Rechtstexte, aus der bestehenden Seite uebernommen (reference/).
-// Hinweis: Der Datenschutztext stammt vom alten Duda-Auftritt und nennt
-// Cookies, Google Analytics und extern geladene Google Web Fonts. Die neue
-// Seite ist cookielos, hostet Fonts selbst und schaltet keine Werbung. Der
-// Text sollte durch die Praxis bzw. deren Datenschutzbeauftragten an das neue
-// Setup angepasst werden.
+// Rechtstexte, aus der bestehenden Seite uebernommen (reference/) und an das
+// aktuelle Setup angepasst: Die neue Seite ist cookielos, hostet die Schriften
+// selbst (kein Google Fonts CDN), bindet die Karte cookielos ueber OpenStreetMap
+// ein und misst Reichweite/Performance cookielos ueber Vercel (siehe Abschnitte
+// "Reichweitenmessung" und "Kartendarstellung"). Vor Live idealerweise noch einmal
+// durch die Praxis bzw. deren Datenschutzbeauftragten pruefen lassen.
 
 export type LegalBlock =
   | { type: "h"; text: string }
@@ -77,6 +77,16 @@ export const datenschutz: LegalBlock[] = [
   {
     type: "p",
     text: "Wir können Daten offenlegen, wenn wir im guten Glauben sind, dies ist hilfreich oder angemessen, um geltenden Gesetzen, Vorschriften, Gerichtsverfahren oder behördlichen Anfragen zu entsprechen, unsere Richtlinien durchzusetzen, mögliche Verletzungen zu untersuchen oder die Rechte, das Eigentum und die Sicherheit unserer Benutzer und Dritter zu schützen.",
+  },
+  { type: "h", text: "Reichweitenmessung" },
+  {
+    type: "p",
+    text: "Zur Verbesserung unseres Angebots erfassen wir anonyme Nutzungs- und Leistungsdaten über die Dienste Vercel Analytics und Vercel Speed Insights der Vercel Inc. Diese Dienste arbeiten cookielos, setzen also keine Cookies auf Ihrem Gerät und legen keine wiedererkennbaren Nutzerprofile an. Erfasst werden ausschließlich aggregierte Werte wie aufgerufene Seiten, ungefährer Herkunftsraum, verwendeter Gerätetyp sowie technische Ladezeiten der Seite. Ein Rückschluss auf Ihre Person ist uns dabei nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren, schnellen und bedarfsgerechten Bereitstellung unserer Website nach Art. 6 Abs. 1 lit. f DSGVO.",
+  },
+  { type: "h", text: "Kartendarstellung" },
+  {
+    type: "p",
+    text: "Zur Anzeige unseres Standorts binden wir eine Karte des Dienstes OpenStreetMap ein, betrieben von der OpenStreetMap Foundation, St John's Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich. Die Einbindung erfolgt cookielos. Beim Laden der Kartenkacheln wird jedoch Ihre IP-Adresse an Server der OpenStreetMap Foundation übertragen, damit die Karte in Ihrem Browser dargestellt werden kann. Rechtsgrundlage ist unser berechtigtes Interesse an einer nutzerfreundlichen Standortdarstellung nach Art. 6 Abs. 1 lit. f DSGVO. Wenn Sie über den Link zur Routenplanung auf einen externen Kartendienst (Google Maps) wechseln, geschieht dies erst nach Ihrem bewussten Klick und unterliegt der Datenschutzerklärung des jeweiligen Anbieters.",
   },
   { type: "h", text: "Wie schützen wir Ihre Daten?" },
   {

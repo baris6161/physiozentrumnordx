@@ -1,19 +1,43 @@
 import { NextResponse } from "next/server";
 import { brandedHtml, sendMail } from "@/lib/mail";
+import { filledTooFast, getClientIp, rateLimited, tooLong } from "@/lib/formGuard";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
-    const { name, email, phone, message, consent, company } = body ?? {};
+    const { name, email, phone, message, consent, company, ts } = body ?? {};
 
     // Honeypot: Bots fuellen dieses Feld aus
     if (company) return NextResponse.json({ ok: true });
 
+    // Zeit-Falle: zu schnell (oder ohne Zeitstempel) = Bot. Still bestaetigen,
+    // damit der Bot keinen Fehler zum Nachbessern bekommt.
+    if (filledTooFast(ts)) return NextResponse.json({ ok: true });
+
+    // Rate-Limit pro IP (Best-Effort, siehe lib/formGuard.ts)
+    if (rateLimited(getClientIp(req))) {
+      return NextResponse.json(
+        { ok: false, error: "Zu viele Anfragen. Bitte versuchen Sie es in einigen Minuten erneut." },
+        { status: 429 },
+      );
+    }
+
     if (!name || !email || !message || !consent) {
       return NextResponse.json(
         { ok: false, error: "Bitte fuellen Sie alle Pflichtfelder aus." },
+        { status: 400 },
+      );
+    }
+    if (
+      tooLong(name, 100) ||
+      tooLong(email, 150) ||
+      tooLong(phone, 40) ||
+      tooLong(message, 5000)
+    ) {
+      return NextResponse.json(
+        { ok: false, error: "Ihre Eingabe ist zu lang." },
         { status: 400 },
       );
     }

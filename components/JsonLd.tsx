@@ -10,7 +10,7 @@ export default function JsonLd() {
     url: site.url,
     telephone: site.phoneFormal,
     email: site.email,
-    image: `${site.url}/images/krankengymnsatik-in-hannover_praxis_08-558w.jpg`,
+    image: `${site.url}/images/empfang-hero.jpg`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -39,7 +39,7 @@ export default function JsonLd() {
         closes: "14:00",
       },
     ],
-    sameAs: [site.social.facebook],
+    sameAs: [site.social.facebook, site.social.instagram],
   };
 
   return (

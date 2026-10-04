@@ -4,7 +4,8 @@ import { services } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url.replace(/\/$/, "");
-  const lastModified = "2026-07-19";
+  // Build-Zeitpunkt: aktualisiert sich bei jeder Neuveroeffentlichung automatisch.
+  const lastModified = new Date();
 
   const routes = [
     { path: "/", priority: 1 },

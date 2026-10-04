@@ -147,13 +147,14 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <a
-            href={site.phoneHref}
+          <Link
+            href="/#kontakt"
+            onClick={(e) => handleNav("/#kontakt", e)}
             className="menu-item mt-4 flex items-center justify-center gap-2 rounded-btn bg-green px-4 py-4 text-[16px] font-bold text-white"
             style={{ animationDelay: `${nav.length * 45}ms` }}
           >
-            Termin vereinbaren · {site.phoneDisplay}
-          </a>
+            Termin vereinbaren <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       )}
     </header>

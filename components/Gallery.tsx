@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gallery } from "@/lib/content";
+import { useFocusTrap } from "@/lib/useFocusTrap";
 
 export default function Gallery() {
   const [active, setActive] = useState<number | null>(null);
   const touchX = useRef<number | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  useFocusTrap(active !== null, overlayRef);
 
   const close = useCallback(() => setActive(null), []);
   const prev = useCallback(
@@ -73,8 +76,10 @@ export default function Gallery() {
 
       {active !== null && (
         <div
+          ref={overlayRef}
+          tabIndex={-1}
           onClick={close}
-          className="fixed inset-0 z-[90] grid place-items-center bg-ink/90 p-4 sm:p-6"
+          className="fixed inset-0 z-[90] grid place-items-center bg-ink/90 p-4 outline-none sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-label={gallery[active].alt}

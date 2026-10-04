@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -39,14 +39,25 @@ export const metadata: Metadata = {
     url: site.url,
     images: [
       {
-        url: "/images/krankengymnsatik-in-hannover_praxis_08-558w.jpg",
+        url: "/images/empfang-hero.jpg",
         width: 558,
         height: 328,
         alt: site.name,
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Physiotherapie Zentrum Nord | Praxis in Hannover List",
+    description:
+      "Physiotherapie, Krankengymnastik und Reha in Hannover List. Mit Spezialgeräten wie Stoßwelle, Hochleistungslaser und HydroJet.",
+    images: ["/images/empfang-hero.jpg"],
+  },
   robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1D653B",
 };
 
 export default function RootLayout({

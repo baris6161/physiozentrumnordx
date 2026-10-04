@@ -13,7 +13,7 @@ export default function MobileBar() {
         <Phone className="h-5 w-5 text-green" /> Anrufen
       </a>
       <Link
-        href="/kontakt"
+        href="/#kontakt"
         className="flex flex-1 items-center justify-center rounded-btn bg-green py-3.5 text-[15px] font-bold text-white"
       >
         Termin

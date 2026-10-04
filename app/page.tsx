@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { services, devices, steps, heroImage } from "@/lib/content";
 import { site } from "@/lib/site";
-import { container, eyebrow, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
+import { container, eyebrow, btnPrimary, btnSecondary } from "@/lib/ui";
 import Reveal from "@/components/Reveal";
 import HashScroll from "@/components/HashScroll";
 import ServiceCard from "@/components/ServiceCard";
@@ -47,12 +47,16 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-green" /> {site.phoneDisplay}
                 </a>
               </div>
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[14px] font-semibold text-muted">
-                <span>Kasse und Selbstzahler</span>
-                <span className="text-line">|</span>
-                <span>Mo bis Do 8 bis 20 Uhr</span>
-                <span className="text-line">|</span>
-                <span>Terminpraxis</span>
+              <div className="mt-6 flex flex-wrap gap-2 text-[13px] font-semibold text-ink2">
+                <span className="rounded-full border border-line bg-white px-3 py-1.5">
+                  Kasse und Selbstzahler
+                </span>
+                <span className="rounded-full border border-line bg-white px-3 py-1.5">
+                  Mo bis Do 8 bis 20 Uhr
+                </span>
+                <span className="rounded-full border border-line bg-white px-3 py-1.5">
+                  Terminpraxis
+                </span>
               </div>
             </Reveal>
           </div>
@@ -67,7 +71,7 @@ export default function Home() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 560px"
                     priority
-                    className="object-cover object-left-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="absolute -bottom-5 left-2 flex max-w-[270px] items-center gap-3.5 rounded-2xl border border-line bg-white p-4 shadow-md2">
@@ -120,9 +124,13 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap justify-center gap-5">
             {services.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 4) * 70} className="h-full">
+              <Reveal
+                key={s.slug}
+                delay={(i % 4) * 70}
+                className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]"
+              >
                 <ServiceCard service={s} />
               </Reveal>
             ))}
@@ -145,9 +153,13 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap justify-center gap-5">
             {devices.map((d, i) => (
-              <Reveal key={d.name} delay={(i % 4) * 70} className="h-full">
+              <Reveal
+                key={d.name}
+                delay={(i % 4) * 70}
+                className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]"
+              >
                 <DeviceCard device={d} />
               </Reveal>
             ))}
@@ -220,16 +232,16 @@ export default function Home() {
                   Wir sind eine Terminpraxis. So vermeiden Sie lange Wartezeiten.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex gap-3">
                 <a
                   href={site.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-btn bg-green px-6 py-3.5 text-[16px] font-bold text-white transition-colors hover:bg-greenDark"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-btn bg-green px-5 py-3.5 text-[16px] font-bold text-white transition-colors hover:bg-greenDark sm:flex-none sm:px-6"
                 >
-                  <Phone className="h-5 w-5" /> {site.phoneDisplay}
+                  <Phone className="h-5 w-5" /> Anrufen
                 </a>
                 <Link
                   href="/#kontakt"
-                  className="inline-flex items-center gap-2 rounded-btn border border-white/30 px-6 py-3.5 text-[16px] font-bold text-white transition-colors hover:border-white"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-btn border border-white/30 px-5 py-3.5 text-[16px] font-bold text-white transition-colors hover:border-white sm:flex-none sm:px-6"
                 >
                   Kontaktformular
                 </Link>

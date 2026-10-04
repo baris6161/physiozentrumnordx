@@ -26,7 +26,7 @@ export const site = {
   osmLink: "https://www.openstreetmap.org/?mlat=52.3930&mlon=9.7588#map=17/52.3930/9.7588",
   social: {
     facebook: "https://www.facebook.com/PhysiotherapieZentrumNord/",
-    instagram: "https://instagram.com/",
+    instagram: "https://www.instagram.com/physiozentrumnord/",
   },
   url:
     process.env.NEXT_PUBLIC_SITE_URL ||

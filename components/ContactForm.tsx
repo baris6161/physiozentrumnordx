@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -12,6 +12,8 @@ const labelClass = "flex flex-col gap-1.5 text-[14px] font-semibold";
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  // Zeitpunkt des Formular-Aufbaus: dient serverseitig als Bot-Zeit-Falle.
+  const mountedAt = useRef(Date.now());
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,7 +26,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ts: mountedAt.current }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");

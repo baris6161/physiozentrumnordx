@@ -35,7 +35,7 @@ export default function ContactSection({
           </p>
         </Reveal>
 
-        <div className="mt-9 flex flex-wrap gap-9 md:gap-14">
+        <div className="mt-9 flex flex-col-reverse gap-9 md:flex-row md:gap-14">
           {/* Kontaktdaten */}
           <div className="min-w-[290px] flex-1 basis-[340px]">
             <Reveal>

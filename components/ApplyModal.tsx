@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useFocusTrap } from "@/lib/useFocusTrap";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -22,6 +23,10 @@ export default function ApplyModal({
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  // Zeitpunkt des Oeffnens: serverseitige Bot-Zeit-Falle.
+  const openedAt = useRef(0);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  useFocusTrap(open, modalRef);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -39,7 +44,9 @@ export default function ApplyModal({
   }, [open]);
 
   useEffect(() => {
-    if (!open) {
+    if (open) {
+      openedAt.current = Date.now();
+    } else {
       setStatus("idle");
       setError("");
     }
@@ -65,7 +72,7 @@ export default function ApplyModal({
       const res = await fetch("/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, jobTitle }),
+        body: JSON.stringify({ ...data, jobTitle, ts: openedAt.current }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -86,7 +93,9 @@ export default function ApplyModal({
       aria-label={`Bewerbung ${jobTitle}`}
     >
       <div
-        className="max-h-[90vh] w-full max-w-[560px] overflow-auto rounded-card bg-white p-6 shadow-lg2 md:p-8"
+        ref={modalRef}
+        tabIndex={-1}
+        className="max-h-[90vh] w-full max-w-[560px] overflow-auto rounded-card bg-white p-6 shadow-lg2 outline-none md:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         {status === "success" ? (

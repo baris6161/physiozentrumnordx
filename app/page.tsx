@@ -34,8 +34,8 @@ export default function Home() {
               </h1>
               <p className="mt-4 max-w-[42ch] text-[clamp(1rem,1.4vw,1.3rem)] text-muted">
                 Physiotherapie, Krankengymnastik und Reha in Hannover. Mit
-                Spezialgeräten wie dem 40 Watt Hochleistungslaser und der Stoßwelle,
-                die Sie in dieser Kombination sonst kaum in Hannover finden.
+                Spezialgeräten wie dem 40 Watt Hochleistungslaser und der EMS
+                Stoßwelle, die Sie in dieser Kombination sonst kaum in Hannover finden.
               </p>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
                   daher die Hero-CTAs erst ab Desktop (lg) zeigen. */}
@@ -79,7 +79,7 @@ export default function Home() {
                     <Spark className="h-5 w-5" />
                   </span>
                   <span className="text-[14px] font-semibold leading-[1.35]">
-                    Laser mit 40 Watt und Stoßwelle.{" "}
+                    Laser mit 40 Watt und EMS Stoßwelle.{" "}
                     <span className="text-greenDark">Exklusiv in Hannover.</span>
                   </span>
                 </div>

@@ -229,14 +229,14 @@ export const services: Service[] = [
     slug: "faszienbehandlung",
     name: "Faszienbehandlung",
     cat: "Selbstzahler",
-    img: IMG + "fasciq-faszientools.png",
+    img: IMG + "faszien-werkzeuge.jpg",
     focus: "center",
     fit: "contain",
     card: "Gezielte Behandlung verklebter Faszien mit professionellen Werkzeugen aus Edelstahl.",
     lead: "Verklebte Faszien lösen wir gezielt mit professionellen Werkzeugen aus Edelstahl, für mehr Beweglichkeit und weniger Schmerz.",
     body: [
       "Faszien sind das bindegewebige Netz, das Muskeln, Gelenke und Organe umhüllt. Verkleben oder verhärten sie, entstehen Bewegungseinschränkungen und Schmerzen. Mit der instrumentengestützten Faszienbehandlung lösen wir diese Verklebungen gezielt.",
-      "Unsere FASCIQ Werkzeuge aus chirurgischem Edelstahl übertragen feine Rückmeldungen aus dem Gewebe direkt in unsere Hand. So spüren wir verhärtete Stellen genau und behandeln sie kontrolliert, von sanftem Gleiten bis zur gezielten Mobilisation.",
+      "Unsere Werkzeuge aus chirurgischem Edelstahl übertragen feine Rückmeldungen aus dem Gewebe direkt in unsere Hand. So spüren wir verhärtete Stellen genau und behandeln sie kontrolliert, von sanftem Gleiten bis zur gezielten Mobilisation.",
     ],
     benefits: [
       "Löst verklebte und verhärtete Faszien",
@@ -244,7 +244,7 @@ export const services: Service[] = [
       "Regt Durchblutung und Regeneration an",
       "Profi-Werkzeuge aus chirurgischem Edelstahl",
     ],
-    device: "FASCIQ Faszientools aus chirurgischem Edelstahl.",
+    device: "Faszientools aus chirurgischem Edelstahl.",
     related: ["massage", "manualtherapie", "physiotherapie"],
     metaTitle: "Faszienbehandlung in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:

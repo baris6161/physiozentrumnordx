@@ -11,14 +11,23 @@ const config: Config = {
       colors: {
         ink: "#1A1A1A",
         ink2: "#33372f",
-        // Helleres Gruen zum Vergleich. Vorher: green #1D653B,
-        // greenDark #164e2d, greenTint #eaf1ec, greenLine #c7ddce.
-        // #2B8449 erreicht mit weisser Schrift 4.6:1 und bleibt damit
-        // knapp ueber der WCAG-AA-Grenze von 4.5:1.
-        green: "#2B8449",
-        greenDark: "#1D653B",
-        greenTint: "#edf5ef",
-        greenLine: "#cce3d4",
+        // TEST: Limettengruen #90aa20 passend zum Praxislogo.
+        //
+        // ZURUECKSETZEN auf den letzten Stand:
+        //   green: "#2B8449", greenDark: "#1D653B",
+        //   greenTint: "#edf5ef", greenLine: "#cce3d4",
+        // Urspruenglicher Stand davor:
+        //   green: "#1D653B", greenDark: "#164e2d",
+        //   greenTint: "#eaf1ec", greenLine: "#c7ddce",
+        //
+        // ACHTUNG Lesbarkeit: #90aa20 erreicht gegen Weiss nur 2.6:1.
+        // WCAG AA verlangt 4.5:1 fuer normalen Text und 3:1 fuer grosse
+        // Schrift. Gruener Text auf weiss und weisse Schrift auf gruenen
+        // Buttons sind damit beide zu kontrastarm.
+        green: "#90aa20",
+        greenDark: "#90aa20",
+        greenTint: "#f4f7e8",
+        greenLine: "#dde7b9",
         paper: "#ffffff",
         sand: "#F4F6F4",
         sand2: "#eef1ee",

@@ -312,6 +312,8 @@ export const devices: Device[] = [
     focus: "center",
     fit: "cover",
     ownPage: true,
+    // Herstellervideo von Lojer, lokal ausgeliefert statt per YouTube.
+    video: "/videos/manuthera-242.mp4",
     desc: "Die weltweit erste Liege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Dekompression.",
     lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind.",
     body: [

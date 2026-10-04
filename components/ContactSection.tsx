@@ -2,7 +2,7 @@ import { site, hours } from "@/lib/site";
 import { container, eyebrow } from "@/lib/ui";
 import Reveal from "./Reveal";
 import ContactForm from "./ContactForm";
-import OsmMap from "./OsmMap";
+import LocationMap from "./LocationMap";
 import { Pin, Phone, Mail } from "./Icons";
 
 /**
@@ -85,7 +85,7 @@ export default function ContactSection({
               </div>
 
               <div className="mt-5">
-                <OsmMap />
+                <LocationMap />
               </div>
             </Reveal>
           </div>

@@ -1,16 +1,20 @@
 import { site } from "@/lib/site";
 
 /**
- * Cookielose OpenStreetMap-Einbettung. Setzt keine Cookies und laedt keine
- * Google-Inhalte, daher DSGVO-freundlich und ohne Consent-Banner nutzbar.
- * Der "Route planen"-Link oeffnet Google Maps erst nach bewusstem Nutzerklick.
+ * Standortkarte im Kontaktbereich. Nutzt die offizielle Google-Maps-Einbettung
+ * aus lib/site.ts, damit der Pin exakt auf der Praxis sitzt.
+ *
+ * DATENSCHUTZ: Google setzt beim Laden Cookies und uebertraegt die IP des
+ * Besuchers an Google. Ohne Einwilligung ist das in der EU angreifbar. Wenn ein
+ * Consent-Banner unerwuenscht ist, waere eine Zwei-Klick-Loesung die Alternative
+ * (Vorschaubild, Karte laedt erst nach Klick).
  */
-export default function OsmMap() {
+export default function LocationMap() {
   return (
     <div className="overflow-hidden rounded-card border border-line">
       <iframe
         title={`Standort ${site.name}, ${site.address.street}, ${site.address.zip} ${site.address.city}`}
-        src={site.osmEmbed}
+        src={site.googleMapsEmbed}
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen

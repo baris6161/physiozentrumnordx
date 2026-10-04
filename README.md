@@ -15,20 +15,30 @@ npm run start    # Produktionsserver
 
 ## Umgebungsvariablen (Vercel)
 
-Das Kontakt- und Bewerbungsformular versendet per SMTP über das Kundenpostfach
-(Nodemailer). In Vercel unter **Settings → Environment Variables** setzen
-(siehe `.env.example`):
+Das Kontakt- und Bewerbungsformular versendet per SMTP (Nodemailer) über das
+Rocketmail-Postfach der Praxisleitung. Das Postfach schickt sich die Anfragen
+selbst zu, ein IONOS-Zugang wird dafür nicht gebraucht. In Vercel unter
+**Settings → Environment Variables** setzen (siehe `.env.example`):
 
-| Variable | Beschreibung |
-|----------|--------------|
-| `SMTP_HOST` | SMTP-Server des Postfachs (z. B. `smtp.ionos.de`) |
-| `SMTP_PORT` | `465` (SSL) oder `587` (STARTTLS) |
-| `SMTP_SECURE` | `true` bei Port 465, `false` bei 587 |
-| `SMTP_USER` | Postfach-Adresse, z. B. `info@krankengymnastik-in-hannover.de` |
-| `SMTP_PASS` | Postfach-Passwort |
-| `CONTACT_TO` | Empfänger der Formular-Mails (Standard: `SMTP_USER`) |
-| `CONTACT_FROM` | Absender (Standard: `SMTP_USER`) |
+| Variable | Wert |
+|----------|------|
+| `SMTP_HOST` | `smtp.mail.yahoo.com` |
+| `SMTP_PORT` | `465` |
+| `SMTP_SECURE` | `true` |
+| `SMTP_USER` | `tareckfares@rocketmail.com` |
+| `SMTP_PASS` | App-Passwort aus dem Yahoo-Konto, **nicht** das Anmeldepasswort |
+| `CONTACT_FROM` | `tareckfares@rocketmail.com` (muss `SMTP_USER` entsprechen) |
+| `CONTACT_TO` | `tareckfares@rocketmail.com` |
 | `NEXT_PUBLIC_SITE_URL` | `https://www.krankengymnastik-in-hannover.de` |
+
+Yahoo akzeptiert für SMTP kein normales Anmeldepasswort. Das App-Passwort wird
+im Yahoo-Konto unter **Kontoinfo → Sicherheit → App-Passwort generieren**
+erstellt. Ändert sich das Yahoo-Passwort, werden App-Passwörter in der Regel
+ungültig und müssen neu erzeugt werden; dann sendet das Formular nicht mehr.
+
+Die Antwortadresse jeder Formularmail wird auf den Absender des Formulars
+gesetzt. Ein Klick auf Antworten geht also direkt an den Patienten oder
+Bewerber, nicht an das eigene Postfach zurück.
 
 Ohne gesetzte SMTP-Variablen liefert das Formular eine saubere Fehlermeldung, statt
 zu senden.

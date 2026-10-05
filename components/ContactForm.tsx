@@ -5,8 +5,13 @@ import { useRef, useState } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
+// min-w-0 ist noetig, weil die Felder in einem Flex-Container liegen.
+// Dort gilt min-width: auto, wodurch ein Feld nicht unter seine
+// Eigenbreite schrumpft. Bei type="date" ist die auf iOS breiter als
+// das Formular, das Feld ragte dadurch heraus und machte die Seite
+// seitlich verschiebbar.
 const inputClass =
-  "w-full rounded-sm2 border border-line bg-sand px-3.5 py-3 text-[16px] text-ink outline-none transition focus:border-green focus:bg-white";
+  "w-full min-w-0 max-w-full rounded-sm2 border border-line bg-sand px-3.5 py-3 text-[16px] text-ink outline-none transition focus:border-green focus:bg-white";
 const labelClass = "flex flex-col gap-1.5 text-[14px] font-semibold";
 
 export default function ContactForm() {

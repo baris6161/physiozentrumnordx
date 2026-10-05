@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { gallery } from "@/lib/content";
 import { useFocusTrap } from "@/lib/useFocusTrap";
 
@@ -10,6 +11,17 @@ export default function Gallery() {
   const touchX = useRef<number | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(active !== null, overlayRef);
+
+  // Das Overlay wird per Portal direkt an document.body gehaengt. Grund:
+  // Die Galerie steckt in einem <Reveal>, und .reveal traegt
+  // will-change: transform. Ein solches Element wird zum Bezugsrahmen fuer
+  // alles, was darin position: fixed ist, auch nach Ende der Animation. Das
+  // Vollbild richtete sich dadurch am Galerie-Kasten aus statt am
+  // Bildschirm: Kopfzeile und untere Leiste blieben sichtbar und das
+  // Overlay scrollte mit. Ausserhalb des Reveal-Containers greift fixed
+  // wieder auf den Viewport.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => setActive(null), []);
   const prev = useCallback(
@@ -74,7 +86,9 @@ export default function Gallery() {
         ))}
       </div>
 
-      {active !== null && (
+      {mounted &&
+        active !== null &&
+        createPortal(
         <div
           ref={overlayRef}
           tabIndex={-1}
@@ -170,8 +184,9 @@ export default function Gallery() {
           <div className="pointer-events-none absolute inset-x-0 bottom-4 text-center text-[13px] text-white/70">
             {active + 1} / {gallery.length} · zum Blättern wischen
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </>
   );
 }

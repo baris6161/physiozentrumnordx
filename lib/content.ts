@@ -269,12 +269,13 @@ export const services: Service[] = [
     card: "Wohltuende Tiefenwärme mit der TDP-Mineralwärmelampe, lockert Muskeln und fördert die Durchblutung.",
     lead: "Wohltuende Tiefenwärme, die Muskeln lockert und die Durchblutung anregt, gern auch als Vorbereitung oder Ergänzung zu anderen Behandlungen.",
     body: [
-      "Bei der Wärmetherapie arbeiten wir mit einer TDP-Lampe, einer Ferninfrarot-Mineralwärmelampe. Ihre Strahlungsplatte ist mit einer Mischung aus 33 Mineralien beschichtet, die beim Erwärmen eine sanfte, tief wirkende Wärme abgibt.",
+      "Bei der Wärmetherapie arbeiten wir mit einer TDP-Lampe, einer Ferninfrarot-Mineralwärmelampe. Ihre Heizplatte besteht aus echter chinesischer Tonerde und ist mit einer Mischung aus 33 Mineralien beschichtet. Beim Erwärmen gibt sie eine sanfte, tief wirkende Wärme ab.",
       "Die Wärme erreicht tiefere Gewebeschichten, regt die Durchblutung an und löst Verspannungen. Wir setzen sie gern begleitend ein, zum Beispiel vor einer Massage oder Manualtherapie, und in der Tradition der chinesischen Medizin als moderne Form der Wärmeanwendung.",
     ],
     benefits: [
       "Wohltuende, tief wirkende Wärme",
       "Lockert Muskeln und löst Verspannungen",
+      "Bei rheumatoiden Beschwerden",
       "Regt die lokale Durchblutung an",
       "Angenehm als Vorbereitung oder Ergänzung",
     ],

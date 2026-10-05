@@ -178,6 +178,15 @@ export const impressum = {
       p: "Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
     },
     {
+      // Pflichthinweis: Teile der Praxisfotos wurden mit KI-Werkzeugen
+      // nachbearbeitet, dabei kamen auch Einrichtungsdetails hinzu, die real
+      // nicht vorhanden sind. Artikel 50 der EU-KI-Verordnung verlangt seit
+      // dem 2. August 2026 eine Kennzeichnung kuenstlich erzeugter oder
+      // wesentlich veraenderter Bilder.
+      h: "Hinweis zu Bildern und Videos",
+      p: "Die Fotos auf dieser Website zeigen unsere Praxisräume und unsere Geräte. Einzelne Aufnahmen wurden digital nachbearbeitet, dabei kamen auch KI-gestützte Werkzeuge zum Einsatz. Einrichtungsdetails können deshalb im Einzelfall von der tatsächlichen Ausstattung abweichen. Maßgeblich ist stets der reale Zustand der Praxis. Die Videos auf den Geräteseiten stammen von den jeweiligen Herstellern und zeigen das Gerät, nicht Aufnahmen aus unserer Praxis.",
+    },
+    {
       h: "Urheberrecht",
       p: "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
     },

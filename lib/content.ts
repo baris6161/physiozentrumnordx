@@ -196,6 +196,7 @@ export const services: Service[] = [
     ],
     benefits: [
       "Löst Muskelverspannungen",
+      "Löst Bindegewebsverklebungen",
       "Bei Rücken, Muskel und Gelenkschmerzen",
       "Regt Durchblutung und Stoffwechsel an",
       "Kombiniert mit Wärmetherapie",

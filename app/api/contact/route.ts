@@ -24,7 +24,7 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!name || !email || !message || !consent) {
+    if (!name || !email || !phone || !message || !consent) {
       return NextResponse.json(
         { ok: false, error: "Bitte fuellen Sie alle Pflichtfelder aus." },
         { status: 400 },
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     const rows: Array<[string, string]> = [
       ["Name", String(name)],
       ["E-Mail", String(email)],
-      ["Telefon", phone ? String(phone) : "nicht angegeben"],
+      ["Telefon", String(phone)],
       ["Nachricht", String(message)],
     ];
 
@@ -62,9 +62,7 @@ export async function POST(req: Request) {
         "Über das Kontaktformular ist eine neue Anfrage eingegangen:",
         rows,
       ),
-      text: `Neue Terminanfrage\n\nName: ${name}\nE-Mail: ${email}\nTelefon: ${
-        phone || "nicht angegeben"
-      }\nNachricht:\n${message}`,
+      text: `Neue Terminanfrage\n\nName: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nNachricht:\n${message}`,
       replyTo: String(email),
     });
 

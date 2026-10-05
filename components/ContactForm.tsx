@@ -97,7 +97,8 @@ export default function ContactForm() {
             <input
               name="phone"
               type="tel"
-              placeholder="Optional"
+              required
+              placeholder="Für Ihren Rückruf"
               className={inputClass}
             />
           </label>

@@ -53,8 +53,8 @@ export const datenschutz: LegalBlock[] = [
   {
     type: "list",
     items: [
-      "Kontaktformular: Name, E-Mail-Adresse, optional Telefonnummer, Ihre Nachricht",
-      "Bewerbungsformular: Name, E-Mail-Adresse, optional Telefonnummer, Ihre Nachricht und Angaben zur gewünschten Stelle",
+      "Kontaktformular: Name, E-Mail-Adresse, Telefonnummer, Ihre Nachricht",
+      "Bewerbungsformular: Vor- und Nachname, Telefonnummer, frühestmöglicher Eintrittstermin und die Stelle, auf die Sie sich bewerben",
     ],
   },
   {

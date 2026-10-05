@@ -301,6 +301,8 @@ export interface Device {
   fit: Fit; // "contain" fuer freigestellte Herstellerfotos, "cover" fuer Praxisaufnahmen
   ownPage: boolean; // eigene Detailseite unter /geraete/<slug>?
   video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
+  youtubeId?: string; // optionales YouTube-Video, laedt erst nach Einwilligung
+  youtubeShort?: boolean; // true bei YouTube Shorts, die im Hochformat laufen
   indications?: string[]; // Beschwerdebilder, bei denen das Geraet eingesetzt wird
   desc: string; // Kurztext auf der Karte
   lead: string; // Einleitung auf der Geraeteseite
@@ -365,6 +367,7 @@ export const devices: Device[] = [
       "Frequenz und Dauer individuell einstellbar",
       "Kurze, gelenkschonende Einheiten",
     ],
+    youtubeId: "YPfWHcc-DvM",
     serviceSlug: "vibrationsplatten-training",
     metaTitle: "Galileo Vibrationstraining in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:

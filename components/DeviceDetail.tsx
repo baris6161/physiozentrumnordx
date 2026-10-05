@@ -10,6 +10,7 @@ import { site } from "@/lib/site";
 import { container, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
 import ZoomableImage from "./ZoomableImage";
+import YouTubeEmbed from "./YouTubeEmbed";
 import { ArrowRight, Check, Spark } from "./Icons";
 
 /**
@@ -187,6 +188,26 @@ export default function DeviceDetail({ device }: { device: Device }) {
                   Ihr Browser kann dieses Video nicht abspielen.
                 </video>
               </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {device.youtubeId && (
+        <section className="bg-sand">
+          <div className={`${container} py-14 md:py-16`}>
+            <Reveal>
+              <h2 className="mb-2 text-[clamp(1.5rem,2.4vw,2rem)]">
+                Das Gerät im Video
+              </h2>
+              <p className="mb-7 max-w-[55ch] text-[1.05rem] text-muted">
+                Kurzes Video des Herstellers.
+              </p>
+              <YouTubeEmbed
+                id={device.youtubeId}
+                title={`${device.name} im Video`}
+                hochformat={device.youtubeShort}
+              />
             </Reveal>
           </div>
         </section>

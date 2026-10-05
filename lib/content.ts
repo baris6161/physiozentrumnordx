@@ -18,6 +18,7 @@ export interface Service {
   benefits: string[];
   device: string | null;
   video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
+  youtubeId?: string; // optionales YouTube-Video, laedt erst nach Einwilligung
   related: string[]; // Slugs verwandter Leistungen
   metaTitle: string;
   metaDescription: string;
@@ -147,6 +148,7 @@ export const services: Service[] = [
       "Nur wenige Minuten pro Sitzung",
     ],
     device: "Swiss DolorClast von EMS, professionelle radiale Stoßwellentechnik.",
+    youtubeId: "yxofeaGkzZY",
     related: ["lasertherapie-hannover", "physiotherapie", "massage"],
     metaTitle: "Stoßwellentherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:

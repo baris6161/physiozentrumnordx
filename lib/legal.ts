@@ -95,7 +95,15 @@ export const datenschutz: LegalBlock[] = [
   { type: "h", text: "Videos" },
   {
     type: "p",
-    text: "Die Videos auf den Geräteseiten liegen auf unserem eigenen Server und werden direkt von dort ausgeliefert. Es ist kein Videoportal eingebunden, es werden dabei keine Daten an Dritte übertragen und keine Cookies gesetzt.",
+    text: "Die Videos auf den Geräteseiten liegen auf unserem eigenen Server und werden direkt von dort ausgeliefert. Dabei werden keine Daten an Dritte übertragen und keine Cookies gesetzt.",
+  },
+  {
+    type: "p",
+    text: "Auf der Seite zur Stoßwellentherapie bieten wir zusätzlich ein Video von YouTube an. Es wird nicht automatisch geladen. Sie sehen zunächst nur einen Hinweis mit einer Schaltfläche. Erst wenn Sie darauf klicken, wird eine Verbindung zu YouTube aufgebaut. Dabei werden Ihre IP-Adresse und Angaben zu Ihrem Gerät an Google übertragen und Cookies gesetzt. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Eine Übermittlung in die USA ist möglich. Wir binden das Video über youtube-nocookie.com ein, wodurch YouTube nach eigenen Angaben weniger Daten erhebt.",
+  },
+  {
+    type: "p",
+    text: "Rechtsgrundlage ist Ihre Einwilligung nach Artikel 6 Absatz 1 Buchstabe a DSGVO in Verbindung mit § 25 Absatz 1 TDDDG. Ihre Zustimmung speichert Ihr Browser lokal auf Ihrem Gerät, damit Sie nicht bei jedem Besuch erneut klicken müssen. Sie können sie jederzeit widerrufen, indem Sie die Websitedaten in Ihren Browsereinstellungen löschen.",
   },
 
   { type: "h", text: "Schriftarten" },
@@ -113,7 +121,7 @@ export const datenschutz: LegalBlock[] = [
   { type: "h", text: "Speicherung im Browser" },
   {
     type: "p",
-    text: "Diese Website setzt keine Cookies. Gespeichert wird lediglich ein einzelner Eintrag im lokalen Speicher Ihres Browsers, falls Sie dem Laden der Karte zugestimmt haben. Dieser Eintrag enthält keine personenbezogenen Daten, verlässt Ihr Gerät nicht und kann von Ihnen jederzeit über die Browsereinstellungen gelöscht werden.",
+    text: "Diese Website setzt keine Cookies. Gespeichert werden lediglich einzelne Einträge im lokalen Speicher Ihres Browsers, falls Sie dem Laden der Karte oder des Videos zugestimmt haben. Dieser Eintrag enthält keine personenbezogenen Daten, verlässt Ihr Gerät nicht und kann von Ihnen jederzeit über die Browsereinstellungen gelöscht werden.",
   },
 
   { type: "h", text: "Verschlüsselung" },

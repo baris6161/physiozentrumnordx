@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { container, eyebrow, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
 import ZoomableImage from "./ZoomableImage";
+import YouTubeEmbed from "./YouTubeEmbed";
 import { ArrowRight, Check, Spark } from "./Icons";
 
 export default function ServiceDetail({ service }: { service: Service }) {
@@ -151,6 +152,25 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   Ihr Browser kann dieses Video nicht abspielen.
                 </video>
               </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {service.youtubeId && (
+        <section className="bg-sand">
+          <div className={`${container} py-14 md:py-16`}>
+            <Reveal>
+              <h2 className="mb-2 text-[clamp(1.5rem,2.4vw,2rem)]">
+                Die Behandlung im Video
+              </h2>
+              <p className="mb-7 max-w-[55ch] text-[1.05rem] text-muted">
+                So läuft eine Sitzung ab.
+              </p>
+              <YouTubeEmbed
+                id={service.youtubeId}
+                title={`${service.name} im Video`}
+              />
             </Reveal>
           </div>
         </section>

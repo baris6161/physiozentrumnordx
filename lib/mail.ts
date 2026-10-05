@@ -80,12 +80,33 @@ export async function sendMail(opts: {
   const transport = getTransport();
   const to = process.env.CONTACT_TO || process.env.SMTP_USER!;
   const from = process.env.CONTACT_FROM || process.env.SMTP_USER!;
-  await transport.sendMail({
+
+  const basis = {
     from: `"Physiotherapie Zentrum Nord" <${from}>`,
     to,
     subject: opts.subject,
     text: opts.text,
     html: opts.html,
-    replyTo: opts.replyTo,
-  });
+  };
+
+  try {
+    await transport.sendMail({ ...basis, replyTo: opts.replyTo });
+  } catch (err) {
+    // Manche Mailserver lehnen eine Nachricht ab, wenn die Antwortadresse
+    // nicht zustellbar ist. Yahoo antwortet darauf mit
+    // "550 Request failed; Mailbox unavailable", was nach einem Problem beim
+    // Empfaenger klingt, aber die Antwortadresse meint. Ein Tippfehler im
+    // Formular wuerde die Anfrage sonst stillschweigend verschlucken.
+    //
+    // Deshalb ein zweiter Versuch ohne Antwortadresse. Die Adresse des
+    // Absenders steht ohnehin im Text der Mail, es geht nur die Bequemlichkeit
+    // verloren, direkt auf Antworten druecken zu koennen.
+    if (!opts.replyTo) throw err;
+    console.error(
+      "Versand mit Antwortadresse fehlgeschlagen, zweiter Versuch ohne:",
+      opts.replyTo,
+      err,
+    );
+    await transport.sendMail(basis);
+  }
 }

@@ -219,7 +219,7 @@ export const services: Service[] = [
     card: "Bis zu 97 Prozent Muskelaktivierung. Gelenkschonend und sehr effektiv.",
     lead: "Auf der Vibrationsplatte aktivieren Sie in kurzer Zeit fast Ihre gesamte Muskulatur, und das ganz schonend für die Gelenke.",
     body: [
-      "Beim Training auf der Vibrationsplatte schwingen die Platten seitenwechselnd und lösen reflexartige Muskelkontraktionen aus, 1.800 bis 3.000 pro Minute. Dabei aktivieren Sie bis zu 97 Prozent Ihrer Muskelfasern.",
+      "Beim Training auf der Vibrationsplatte schwingen die Platten seitenalternierend und lösen reflexartige Muskelkontraktionen aus, 1.800 bis 3.000 pro Minute. Dabei aktivieren Sie bis zu 97 Prozent Ihrer Muskelfasern.",
       "Das gelenkschonende Ganzkörpertraining kräftigt die Tiefenmuskulatur, beugt Rückenbeschwerden vor und passt für jedes Alter. Als Selbstzahler oder als KG-Geräteleistung.",
     ],
     benefits: [
@@ -228,7 +228,7 @@ export const services: Service[] = [
       "Beugt Rückenbeschwerden vor",
       "Für jedes Alter geeignet",
     ],
-    device: "Galileo Fit mit Personal-Trainer-Display und BodyVibe Gravity 17, seitenwechselndes Vibrationstraining.",
+    device: "Galileo Fit mit Personal-Trainer-Display und BodyVibe Gravity 17, seitenalternierendes Vibrationsplattentraining.",
     related: ["krankengymnastik", "physiotherapie", "stosswellentherapie-hannover"],
     metaTitle: "Vibrationsplatten Training in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
@@ -349,20 +349,20 @@ export const devices: Device[] = [
   {
     slug: "galileo-fit",
     name: "Galileo Fit",
-    tag: "Seitenwechselndes Vibrationstraining",
+    tag: "Seitenalternierendes Vibrationsplattentraining",
     img: IMG + "galileo-fit.jpg",
     focus: "center",
     fit: "cover",
     ownPage: true,
-    desc: "Seitenwechselnde Vibration löst reflexartige Muskelkontraktionen aus. Mit Personal-Trainer-Display.",
-    lead: "Beim Galileo Fit kippt die Trainingsplatte seitenwechselnd um eine Mittelachse, ähnlich dem Bewegungsmuster beim Gehen. Der Körper antwortet darauf mit reflexartigen Muskelkontraktionen.",
+    desc: "Seitenalternierende Vibration löst reflexartige Muskelkontraktionen aus. Mit Personal-Trainer-Display.",
+    lead: "Beim Galileo Fit kippt die Trainingsplatte seitenalternierend um eine Mittelachse, ähnlich dem Bewegungsmuster beim Gehen. Der Körper antwortet darauf mit reflexartigen Muskelkontraktionen.",
     body: [
       "Anders als bei rein auf und ab schwingenden Platten arbeitet der Galileo mit einer Wippbewegung. Das Becken wird abwechselnd angehoben und gesenkt, wodurch die Muskulatur reflektorisch gegenarbeitet, viele hundert Mal pro Minute.",
       "Über das Display stellen wir Frequenz und Dauer passend zu Ihrem Ziel ein. Niedrige Frequenzen nutzen wir für Koordination und Beweglichkeit, höhere für Kraft.",
       "Eine Einheit dauert nur wenige Minuten. Das Training ist gelenkschonend und eignet sich damit auch für Menschen, denen klassisches Gerätetraining zu belastend ist.",
     ],
     benefits: [
-      "Seitenwechselnde Bewegung ähnlich dem Gehen",
+      "Seitenalternierende Bewegung ähnlich dem Gehen",
       "Reflexartige Muskelaktivierung",
       "Frequenz und Dauer individuell einstellbar",
       "Kurze, gelenkschonende Einheiten",
@@ -371,7 +371,7 @@ export const devices: Device[] = [
     serviceSlug: "vibrationsplatten-training",
     metaTitle: "Galileo Vibrationstraining in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
-      "Galileo Fit Vibrationstraining in Hannover List. Seitenwechselnde Vibration für reflexartige Muskelaktivierung, kurz und gelenkschonend.",
+      "Galileo Fit Vibrationstraining in Hannover List. Seitenalternierende Vibration für reflexartige Muskelaktivierung, kurz und gelenkschonend.",
   },
   {
     slug: "swiss-dolorclast",

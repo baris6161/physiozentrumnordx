@@ -4,6 +4,7 @@ import { type Service, serviceBySlug } from "@/lib/content";
 import { site } from "@/lib/site";
 import { container, eyebrow, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
+import ZoomableImage from "./ZoomableImage";
 import { ArrowRight, Check, Spark } from "./Icons";
 
 export default function ServiceDetail({ service }: { service: Service }) {
@@ -64,12 +65,11 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   je 12,5 Prozent abgeschnitten, wodurch mittig aufgenommene
                   Geraete aus der Mitte rutschten. */}
               <div className="relative aspect-[16/9] overflow-hidden rounded-card bg-sand2 shadow-lg2">
-                <Image
+                <ZoomableImage
                   src={service.img}
                   alt={service.name}
-                  fill
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className={heroImg}
+                  imgClassName={heroImg}
                   priority
                 />
               </div>

@@ -9,6 +9,7 @@ import {
 import { site } from "@/lib/site";
 import { container, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
+import ZoomableImage from "./ZoomableImage";
 import { ArrowRight, Check, Spark } from "./Icons";
 
 /**
@@ -69,12 +70,11 @@ export default function DeviceDetail({ device }: { device: Device }) {
           <div className="min-w-[290px] flex-1 basis-[360px]">
             <Reveal delay={80}>
               <div className="relative aspect-[16/9] overflow-hidden rounded-card bg-sand2 shadow-lg2">
-                <Image
+                <ZoomableImage
                   src={device.img}
                   alt={device.name}
-                  fill
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className={heroImg}
+                  imgClassName={heroImg}
                   priority
                 />
               </div>

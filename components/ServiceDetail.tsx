@@ -170,6 +170,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               <YouTubeEmbed
                 id={service.youtubeId}
                 title={`${service.name} im Video`}
+                hochformat={service.youtubeShort}
               />
             </Reveal>
           </div>

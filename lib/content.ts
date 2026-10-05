@@ -19,6 +19,7 @@ export interface Service {
   device: string | null;
   video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
   youtubeId?: string; // optionales YouTube-Video, laedt erst nach Einwilligung
+  youtubeShort?: boolean; // true bei YouTube Shorts, die im Hochformat laufen
   related: string[]; // Slugs verwandter Leistungen
   metaTitle: string;
   metaDescription: string;
@@ -200,6 +201,8 @@ export const services: Service[] = [
       "Kombiniert mit Wärmetherapie",
     ],
     device: "Achedaway, Schröpfen kombiniert mit Massage und Infrarotwärme.",
+    youtubeId: "c1afJzR9AH8",
+    youtubeShort: true,
     related: ["massage", "lasertherapie-hannover", "physiotherapie"],
     metaTitle: "Schröpftherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:

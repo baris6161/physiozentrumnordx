@@ -19,10 +19,15 @@ const STORAGE_KEY = "pzn-youtube-erlaubt";
 export default function YouTubeEmbed({
   id,
   title,
+  hochformat = false,
 }: {
   id: string;
   title: string;
+  /** YouTube Shorts sind 9:16. Ohne das stuende das Video in einem
+   *  16:9-Rahmen mit breiten schwarzen Balken links und rechts. */
+  hochformat?: boolean;
 }) {
+  const rahmen = hochformat ? "aspect-[9/16]" : "aspect-video";
   const [geladen, setGeladen] = useState(false);
 
   useEffect(() => {
@@ -43,7 +48,11 @@ export default function YouTubeEmbed({
   }
 
   return (
-    <div className="overflow-hidden rounded-card border border-line bg-black shadow-lg2">
+    <div
+      className={`overflow-hidden rounded-card border border-line bg-black shadow-lg2 ${
+        hochformat ? "mx-auto max-w-[400px]" : ""
+      }`}
+    >
       {geladen ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
@@ -51,10 +60,10 @@ export default function YouTubeEmbed({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          className="block aspect-video w-full border-0"
+          className={`block w-full border-0 ${rahmen}`}
         />
       ) : (
-        <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 bg-sand2 px-6 text-center">
+        <div className={`flex w-full flex-col items-center justify-center gap-3 bg-sand2 px-6 text-center ${rahmen}`}>
           <span className="grid h-14 w-14 place-items-center rounded-full bg-green text-white">
             <svg
               viewBox="0 0 24 24"

@@ -141,6 +141,7 @@ export const services: Service[] = [
     ],
     benefits: [
       "Bei Fersensporn und Achillesbeschwerden",
+      "Bei schmerzhaften Schulterbeschwerden",
       "Bei Tennis und Golferellenbogen",
       "Bei Triggerpunkten und Faszienspannung",
       "Nur wenige Minuten pro Sitzung",
@@ -380,6 +381,7 @@ export const devices: Device[] = [
     ],
     benefits: [
       "Bei Fersensporn und Achillesbeschwerden",
+      "Bei schmerzhaften Schulterbeschwerden",
       "Bei Tennis und Golferellenbogen",
       "Löst hartnäckige Triggerpunkte",
       "Nur wenige Minuten pro Sitzung",

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { type Device, deviceHref } from "@/lib/content";
 import { ArrowRight } from "./Icons";
 
-/** Spezialgeraete-Karte. Einheitliche Bildbox (contain auf Weiss) => alle Karten gleich hoch. */
+/** Therapiegeraete-Karte. Einheitliche Bildbox (contain auf Weiss) => alle Karten gleich hoch. */
 export default function DeviceCard({ device }: { device: Device }) {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-sm2 transition duration-200 hover:-translate-y-1 hover:border-greenLine hover:shadow-md2">

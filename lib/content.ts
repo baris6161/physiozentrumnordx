@@ -282,7 +282,7 @@ export const services: Service[] = [
 export const serviceBySlug = (slug: string) =>
   services.find((s) => s.slug === slug);
 
-// Spezialgeraete-Spotlight auf der Startseite. Bilder werden einheitlich
+// Therapiegeraete-Spotlight auf der Startseite. Bilder werden einheitlich
 // (gleiche Box, object-contain auf Weiss) dargestellt, damit alle Karten
 // gleich hoch sind und Ueberschriften auf einer Linie liegen.
 export interface Device {

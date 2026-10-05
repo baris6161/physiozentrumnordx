@@ -48,7 +48,7 @@ export const hoursShort = "Mo bis Fr ab 8 Uhr";
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Leistungen", href: "/#leistungen" },
-  { label: "Spezialgeräte", href: "/#spezialgeraete" },
+  { label: "Therapiegeräte", href: "/#therapiegeraete" },
   { label: "Patienteninfo", href: "/patienteninformation" },
   { label: "Jobs", href: "/jobs" },
   { label: "Kontakt", href: "/#kontakt" },

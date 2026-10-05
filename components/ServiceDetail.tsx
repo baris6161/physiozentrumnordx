@@ -100,7 +100,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   </span>
                   <div>
                     <div className="text-[13px] font-bold uppercase tracking-[0.05em] text-greenDark">
-                      Eingesetztes Spezialgerät
+                      Eingesetztes Therapiegerät
                     </div>
                     <p className="mt-1.5 font-semibold text-ink">{service.device}</p>
                   </div>

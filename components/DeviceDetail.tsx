@@ -13,7 +13,7 @@ import ZoomableImage from "./ZoomableImage";
 import { ArrowRight, Check, Spark } from "./Icons";
 
 /**
- * Detailseite eines Spezialgeraets unter /geraete/<slug>.
+ * Detailseite eines Therapiegeraets unter /geraete/<slug>.
  * Aufbau bewusst nah an ServiceDetail, damit sich die Seiten gleich anfuehlen.
  */
 export default function DeviceDetail({ device }: { device: Device }) {
@@ -34,8 +34,8 @@ export default function DeviceDetail({ device }: { device: Device }) {
               Home
             </Link>
             <span className="opacity-60">/</span>
-            <Link href="/#spezialgeraete" className="hover:text-greenDark">
-              Spezialgeräte
+            <Link href="/#therapiegeraete" className="hover:text-greenDark">
+              Therapiegeräte
             </Link>
             <span className="opacity-60">/</span>
             <span className="font-semibold text-ink">{device.name}</span>
@@ -197,7 +197,7 @@ export default function DeviceDetail({ device }: { device: Device }) {
         <div className={`${container} py-14 md:py-16`}>
           <Reveal>
             <h2 className="mb-7 text-[clamp(1.5rem,2.4vw,2rem)]">
-              Weitere Spezialgeräte
+              Weitere Therapiegeräte
             </h2>
           </Reveal>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

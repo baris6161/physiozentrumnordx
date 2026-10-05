@@ -34,7 +34,7 @@ export default function Home() {
               </h1>
               <p className="mt-4 max-w-[42ch] text-[clamp(1rem,1.4vw,1.3rem)] text-muted">
                 Physiotherapie, Krankengymnastik und Reha in Hannover. Mit
-                Spezialgeräten wie dem 40 Watt Hochleistungslaser und der EMS
+                Therapiegeräten wie dem 40 Watt Hochleistungslaser und der EMS
                 Stoßwelle, die Sie in dieser Kombination sonst kaum in Hannover finden.
               </p>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
@@ -92,13 +92,13 @@ export default function Home() {
           className={`${container} flex flex-wrap items-center justify-between gap-7 py-8 md:py-11`}
         >
           <p className="max-w-[60ch] font-heading text-[clamp(1.15rem,2vw,1.6rem)] font-semibold leading-tight">
-            Spezialgeräte, die es in Hannover sonst kaum gibt.{" "}
+            Therapiegeräte, die es in Hannover sonst kaum gibt.{" "}
             <span className="text-[#8fd6a3]">
               Medizinisch führend, viele davon als Selbstzahler Leistung.
             </span>
           </p>
           <Link
-            href="/#spezialgeraete"
+            href="/#therapiegeraete"
             className="inline-flex flex-shrink-0 items-center gap-2 rounded-btn bg-white px-5 py-3.5 text-[15px] font-bold text-ink transition-colors hover:bg-green hover:text-white"
           >
             Geräte entdecken <ArrowRight className="h-4 w-4" />
@@ -136,11 +136,11 @@ export default function Home() {
       </section>
 
       {/* SPEZIALGERÄTE */}
-      <section id="spezialgeraete" className="bg-sand">
+      <section id="therapiegeraete" className="bg-sand">
         <div className={`${container} py-16 md:py-24`}>
           <Reveal>
             <div className="mb-9 max-w-[640px] md:mb-[52px]">
-              <span className={eyebrow}>Spezialgeräte und Selbstzahler</span>
+              <span className={eyebrow}>Therapiegeräte und Selbstzahler</span>
               <h2 className="text-[clamp(2rem,3.6vw,3rem)]">
                 Ausstattung auf Klinik-Niveau
               </h2>

@@ -275,7 +275,7 @@ export const services: Service[] = [
     benefits: [
       "Wohltuende, tief wirkende Wärme",
       "Lockert Muskeln und löst Verspannungen",
-      "Bei rheumatoiden Beschwerden",
+      "Bei rheumatoiden Gelenkbeschwerden",
       "Regt die lokale Durchblutung an",
       "Angenehm als Vorbereitung oder Ergänzung",
     ],

@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               <div className="mt-6 flex flex-wrap gap-2 text-[13px] font-semibold text-ink2">
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
-                  Kasse und Selbstzahler
+                  Auf ärztliche Verordnung
                 </span>
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
                   {hoursShort}
@@ -94,7 +94,7 @@ export default function Home() {
           <p className="max-w-[60ch] font-heading text-[clamp(1.15rem,2vw,1.6rem)] font-semibold leading-tight">
             Therapiegeräte, die es in Hannover sonst kaum gibt.{" "}
             <span className="text-[#8fd6a3]">
-              Medizinisch führend, viele davon als Selbstzahler Leistung.
+              Medizinisch führend, auf ärztliche Verordnung.
             </span>
           </p>
           <Link
@@ -117,7 +117,7 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-[1.1rem] text-muted">
                 Von der klassischen Krankengymnastik bis zur gerätegestützten
-                Spezialtherapie. Auf Rezept und als Selbstzahler.
+                Spezialtherapie. Ausschließlich auf ärztliche Verordnung.
               </p>
             </div>
           </Reveal>
@@ -140,12 +140,12 @@ export default function Home() {
         <div className={`${container} py-16 md:py-24`}>
           <Reveal>
             <div className="mb-9 max-w-[640px] md:mb-[52px]">
-              <span className={eyebrow}>Therapiegeräte und Selbstzahler</span>
+              <span className={eyebrow}>Therapiegeräte</span>
               <h2 className="text-[clamp(2rem,3.6vw,3rem)]">
                 Ausstattung auf Klinik-Niveau
               </h2>
               <p className="mt-4 text-[1.1rem] text-muted">
-                Hochwertige Therapiegeräte, viele davon als Selbstzahler Leistung. Für
+                Hochwertige Therapiegeräte für Behandlungen auf ärztliche Verordnung. Für
                 Behandlungen, die anderswo in Hannover kaum verfügbar sind.
               </p>
             </div>

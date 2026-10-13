@@ -29,7 +29,7 @@ export const services: Service[] = [
   {
     slug: "physiotherapie",
     name: "Physiotherapie",
-    cat: "Kasse und Selbstzahler",
+    cat: "Auf ärztliche Verordnung · Kasse oder Selbstzahler",
     img: IMG + "behandlungsraum.jpg",
     focus: "center",
     fit: "cover",
@@ -54,7 +54,7 @@ export const services: Service[] = [
   {
     slug: "krankengymnastik",
     name: "Krankengymnastik",
-    cat: "Kassenleistung",
+    cat: "Auf ärztliche Verordnung · Kassenleistung",
     img: IMG + "sprossenwand.jpg",
     focus: "center",
     fit: "cover",
@@ -96,7 +96,7 @@ export const services: Service[] = [
       "Lindert Kopfschmerzen",
       "Stabilisiert überbewegliche Gelenke",
     ],
-    device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren. Als Selbstzahlerleistung.",
+    device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren.",
     video: "/videos/manuthera-242.mp4",
     related: ["physiotherapie", "krankengymnastik", "massage"],
     metaTitle: "Manuthera 242 und Manualtherapie in Hannover | Physiotherapie Zentrum Nord",
@@ -106,7 +106,7 @@ export const services: Service[] = [
   {
     slug: "massage",
     name: "Massage",
-    cat: "Rezept und Selbstzahler",
+    cat: "Auf ärztliche Verordnung · Kasse oder Selbstzahler",
     img: IMG + "behandlungsraum-fenster.jpg",
     focus: "center",
     fit: "cover",
@@ -131,7 +131,7 @@ export const services: Service[] = [
   {
     slug: "stosswellentherapie-hannover",
     name: "Stoßwellentherapie",
-    cat: "Selbstzahler und Privatrezept",
+    cat: "Auf ärztliche Verordnung · Privatrezept oder Selbstzahler",
     img: IMG + "EMS_Swiss_DolorClast_Master_Deivice_Cart_side-1920w.jpg",
     focus: "center",
     fit: "contain",
@@ -158,7 +158,7 @@ export const services: Service[] = [
   {
     slug: "lasertherapie-hannover",
     name: "Lasertherapie",
-    cat: "Selbstzahler und Privat",
+    cat: "Auf ärztliche Verordnung · Privatrezept oder Selbstzahler",
     img: IMG + "chattanooga-behandlung.jpg",
     focus: "center",
     fit: "cover",
@@ -184,7 +184,7 @@ export const services: Service[] = [
   {
     slug: "schroepftherapie",
     name: "Schröpftherapie",
-    cat: "Selbstzahler",
+    cat: "Auf ärztliche Verordnung · Selbstzahler",
     img: IMG + "IMG_0317-1920w.jpg",
     focus: "center",
     fit: "cover",
@@ -212,7 +212,7 @@ export const services: Service[] = [
   {
     slug: "vibrationsplatten-training",
     name: "Vibrationsplatten Training",
-    cat: "Selbstzahler und KG-Gerät",
+    cat: "Auf ärztliche Verordnung · KG-Gerät oder Selbstzahler",
     img: IMG + "cardioraum.jpg",
     focus: "center",
     fit: "cover",
@@ -220,7 +220,7 @@ export const services: Service[] = [
     lead: "Auf der Vibrationsplatte aktivieren Sie in kurzer Zeit fast Ihre gesamte Muskulatur, und das ganz schonend für die Gelenke.",
     body: [
       "Beim Training auf der Vibrationsplatte schwingen die Platten seitenalternierend und lösen reflexartige Muskelkontraktionen aus, 1.800 bis 3.000 pro Minute. Dabei aktivieren Sie bis zu 97 Prozent Ihrer Muskelfasern.",
-      "Das gelenkschonende Ganzkörpertraining kräftigt die Tiefenmuskulatur, beugt Rückenbeschwerden vor und passt für jedes Alter. Als Selbstzahler oder als KG-Geräteleistung.",
+      "Das gelenkschonende Ganzkörpertraining kräftigt die Tiefenmuskulatur, beugt Rückenbeschwerden vor und passt für jedes Alter. Als KG-Geräteleistung oder als Selbstzahlerleistung, in beiden Fällen auf ärztliche Verordnung.",
     ],
     benefits: [
       "Kräftigt die Tiefenmuskulatur",
@@ -237,7 +237,7 @@ export const services: Service[] = [
   {
     slug: "faszienbehandlung",
     name: "Faszienbehandlung",
-    cat: "Selbstzahler",
+    cat: "Auf ärztliche Verordnung · Selbstzahler",
     img: IMG + "faszien-werkzeuge.jpg",
     focus: "center",
     fit: "contain",
@@ -262,7 +262,7 @@ export const services: Service[] = [
   {
     slug: "waermetherapie",
     name: "Wärmetherapie",
-    cat: "Selbstzahler",
+    cat: "Auf ärztliche Verordnung · Selbstzahler",
     img: IMG + "tdp-lampe-cq32.png",
     focus: "center",
     fit: "contain",
@@ -286,6 +286,19 @@ export const services: Service[] = [
       "Wärmetherapie in Hannover mit TDP-Mineralwärmelampe. Wohltuende Tiefenwärme, lockert Muskeln und fördert die Durchblutung.",
   },
 ];
+
+/**
+ * Pflichthinweis auf jeder Leistungsseite.
+ *
+ * Hintergrund: Die Region Hannover hat die Praxis angeschrieben, weil die
+ * Website den Eindruck erweckte, Behandlungen seien ohne aerztliche
+ * Verordnung moeglich. Das waere Heilkunde im Sinne des
+ * Heilpraktikergesetzes und erlaubnispflichtig. Das Wort "Selbstzahler"
+ * stand frueher allein und liess sich so lesen. Es bezeichnet aber nur die
+ * Abrechnung, nicht den Zugang ohne Verordnung.
+ */
+export const verordnungHinweis =
+  "Alle Behandlungen führen wir ausschließlich auf ärztliche Verordnung durch. Selbstzahler bedeutet, dass Sie die Leistung privat bezahlen. Eine Verordnung Ihrer Ärztin oder Ihres Arztes ist auch dann erforderlich.";
 
 export const serviceBySlug = (slug: string) =>
   services.find((s) => s.slug === slug);
@@ -319,7 +332,7 @@ export const devices: Device[] = [
   {
     slug: "manuthera-242",
     name: "Manuthera 242",
-    tag: "Behandlungsliege von Lojer, Selbstzahler",
+    tag: "Behandlungsliege von Lojer",
     img: IMG + "manualtherapie-raum.jpg",
     focus: "center",
     fit: "cover",
@@ -333,14 +346,14 @@ export const devices: Device[] = [
       "Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander. Dadurch können wir Ihre Wirbelsäule gezielt in Rotation, Seitneigung und Traktion bringen, während Sie entspannt liegen bleiben.",
       "Für Sie bedeutet das vor allem eines: Sie müssen sich während der Behandlung nicht aktiv halten oder umlagern. Wir arbeiten mit der Liege statt gegen Ihr Körpergewicht und können so auch bei akuten Beschwerden sehr sanft vorgehen.",
       "Wir setzen die Manuthera vor allem in der Manualtherapie ein, bei Nacken und Rückenbeschwerden sowie zur Entlastung der Bandscheiben.",
-      "Die Behandlung auf der Manuthera 242 bieten wir ausschließlich als Selbstzahlerleistung an. Sprechen Sie uns auf Dauer und Kosten an, wir beraten Sie gern.",
+      "Die Behandlung auf der Manuthera 242 rechnen wir als Selbstzahlerleistung ab. Wie bei allen unseren Behandlungen ist dafür eine ärztliche Verordnung erforderlich. Sprechen Sie uns auf Dauer und Kosten an, wir beraten Sie gern.",
     ],
     benefits: [
       "Dreidimensionale Mobilisation der Wirbelsäule",
       "Sanfte Traktion und Entlastung",
       "Entlastet Bandscheiben und Facettengelenke",
       "Auch bei akuten Beschwerden einsetzbar",
-      "Ausschließlich als Selbstzahlerleistung",
+      "Selbstzahlerleistung auf ärztliche Verordnung",
     ],
     serviceSlug: "manuthera-242",
     metaTitle: "Manuthera 242 in Hannover | Physiotherapie Zentrum Nord",

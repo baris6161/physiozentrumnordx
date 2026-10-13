@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type Service, serviceBySlug } from "@/lib/content";
+import { type Service, serviceBySlug, verordnungHinweis } from "@/lib/content";
 import { site } from "@/lib/site";
 import { container, eyebrow, btnPrimary, btnSecondary, focusClass } from "@/lib/ui";
 import Reveal from "./Reveal";
@@ -47,6 +47,13 @@ export default function ServiceDetail({ service }: { service: Service }) {
               </h1>
               <p className="mt-5 max-w-[42ch] text-[clamp(1.1rem,1.6vw,1.3rem)] text-ink2">
                 {service.lead}
+              </p>
+              {/* Pflichthinweis. Das Wort "Selbstzahler" stand frueher allein
+                  und liess sich lesen, als sei eine Behandlung ohne aerztliche
+                  Verordnung moeglich. Genau daran hat die Region Hannover die
+                  Praxis festgemacht. */}
+              <p className="mt-5 rounded-card border border-greenLine bg-greenTint px-5 py-4 text-[14.5px] leading-[1.6] text-ink2">
+                {verordnungHinweis}
               </p>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
                   daher Hero-CTAs erst ab Desktop (lg) zeigen. */}

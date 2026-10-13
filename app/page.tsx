@@ -116,8 +116,8 @@ export default function Home() {
                 Das gesamte Spektrum moderner Physiotherapie
               </h2>
               <p className="mt-4 text-[1.1rem] text-muted">
-                Von der klassischen Krankengymnastik bis zur gerätegestützten
-                Spezialtherapie. Ausschließlich auf ärztliche Verordnung.
+                Alle Selbstzahler/Privatleistungen setzen eine Verordnung mit
+                entsprechender Diagnose vom Arzt voraus.
               </p>
             </div>
           </Reveal>

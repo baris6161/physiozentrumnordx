@@ -297,8 +297,10 @@ export const services: Service[] = [
  * stand frueher allein und liess sich so lesen. Es bezeichnet aber nur die
  * Abrechnung, nicht den Zugang ohne Verordnung.
  */
-export const verordnungHinweis =
-  "Alle Behandlungen führen wir ausschließlich auf ärztliche Verordnung durch. Selbstzahler bedeutet, dass Sie die Leistung privat bezahlen. Eine Verordnung Ihrer Ärztin oder Ihres Arztes ist auch dann erforderlich.";
+export const verordnungHinweis = {
+  titel: "Hinweis zu Selbstzahlerleistungen",
+  text: "Die Inanspruchnahme von Selbstzahlerleistungen ist nur mit einer ärztlichen Verordnung inklusive Diagnose möglich.",
+};
 
 export const serviceBySlug = (slug: string) =>
   services.find((s) => s.slug === slug);
@@ -523,6 +525,10 @@ export const patient = [
   {
     t: "Handtuch",
     d: "Bitte bringen Sie zu jedem Termin ein großes Handtuch mit. Andernfalls berechnen wir eine kleine Gebühr für ein Leihhandtuch.",
+  },
+  {
+    t: "Selbstzahlerleistungen",
+    d: "Die Inanspruchnahme von Selbstzahlerleistungen ist nur mit einer ärztlichen Verordnung inklusive Diagnose möglich.",
   },
   {
     t: "Rezept",

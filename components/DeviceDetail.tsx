@@ -61,9 +61,14 @@ export default function DeviceDetail({ device }: { device: Device }) {
                   und liess sich lesen, als sei eine Behandlung ohne aerztliche
                   Verordnung moeglich. Genau daran hat die Region Hannover die
                   Praxis festgemacht. */}
-              <p className="mt-5 rounded-card border border-greenLine bg-greenTint px-5 py-4 text-[14.5px] leading-[1.6] text-ink2">
-                {verordnungHinweis}
-              </p>
+              <div className="mt-5 rounded-card border border-greenLine bg-greenTint px-5 py-4">
+                <div className="text-[13px] font-bold uppercase tracking-[0.05em] text-greenDark">
+                  {verordnungHinweis.titel}
+                </div>
+                <p className="mt-1.5 text-[14.5px] leading-[1.6] text-ink2">
+                  {verordnungHinweis.text}
+                </p>
+              </div>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
                   daher Hero-CTAs erst ab Desktop (lg) zeigen. */}
               <div className="mt-7 hidden flex-wrap gap-3 lg:flex">

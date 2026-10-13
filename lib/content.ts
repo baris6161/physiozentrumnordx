@@ -8,7 +8,7 @@ export type Fit = "cover" | "contain";
 export interface Service {
   slug: string; // bestehender SEO-Slug, 1:1 erhalten
   name: string;
-  cat: string;
+  cat?: string; // Abrechnungsart. Entfaellt bei Massage, die ohne Diagnose moeglich ist
   img: string;
   focus: Focus; // Praxisfotos mit Logo oben links: "left-top"
   fit: Fit;
@@ -107,7 +107,6 @@ export const services: Service[] = [
   {
     slug: "massage",
     name: "Massage",
-    cat: "Kasse oder Selbstzahler",
     img: IMG + "behandlungsraum-fenster.jpg",
     focus: "center",
     fit: "cover",

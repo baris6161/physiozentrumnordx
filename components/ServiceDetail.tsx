@@ -39,9 +39,11 @@ export default function ServiceDetail({ service }: { service: Service }) {
         >
           <div className="min-w-[290px] flex-1 basis-[380px]">
             <Reveal>
-              <span className="mb-4 inline-block rounded-full border border-greenLine bg-greenTint px-3 py-1.5 text-[13px] font-bold text-greenDark">
-                {service.cat}
-              </span>
+              {service.cat && (
+                <span className="mb-4 inline-block rounded-full border border-greenLine bg-greenTint px-3 py-1.5 text-[13px] font-bold text-greenDark">
+                  {service.cat}
+                </span>
+              )}
               <h1 className="text-[clamp(2.3rem,4.6vw,3.6rem)] font-extrabold">
                 {service.name}
               </h1>

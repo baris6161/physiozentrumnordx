@@ -23,9 +23,11 @@ export default function ServiceCard({ service }: { service: Service }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
           className={`transition-transform duration-300 group-hover:scale-[1.04] ${imgClass}`}
         />
-        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11.5px] font-bold text-greenDark shadow-sm2">
-          {service.cat}
-        </span>
+        {service.cat && (
+          <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11.5px] font-bold text-greenDark shadow-sm2">
+            {service.cat}
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-[1.28rem]">{service.name}</h3>

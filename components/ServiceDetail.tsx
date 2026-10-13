@@ -57,7 +57,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                   {verordnungHinweis.titel}
                 </div>
                 <p className="mt-1.5 text-[14.5px] leading-[1.6] text-ink2">
-                  {verordnungHinweis.text}
+                  {service.hinweis ?? verordnungHinweis.text}
                 </p>
               </div>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,

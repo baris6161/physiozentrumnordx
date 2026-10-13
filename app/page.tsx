@@ -49,9 +49,6 @@ export default function Home() {
               </div>
               <div className="mt-6 flex flex-wrap gap-2 text-[13px] font-semibold text-ink2">
                 <span className="rounded-full border border-line bg-white px-3 py-1.5">
-                  Auf ärztliche Verordnung
-                </span>
-                <span className="rounded-full border border-line bg-white px-3 py-1.5">
                   {hoursShort}
                 </span>
               </div>
@@ -94,7 +91,7 @@ export default function Home() {
           <p className="max-w-[60ch] font-heading text-[clamp(1.15rem,2vw,1.6rem)] font-semibold leading-tight">
             Therapiegeräte, die es in Hannover sonst kaum gibt.{" "}
             <span className="text-[#8fd6a3]">
-              Medizinisch führend, auf ärztliche Verordnung.
+              Immer nur mit gültiger Diagnose vom Arzt.
             </span>
           </p>
           <Link
@@ -145,8 +142,9 @@ export default function Home() {
                 Ausstattung auf Klinik-Niveau
               </h2>
               <p className="mt-4 text-[1.1rem] text-muted">
-                Hochwertige Therapiegeräte für Behandlungen auf ärztliche Verordnung. Für
-                Behandlungen, die anderswo in Hannover kaum verfügbar sind.
+                Hochwertige Therapiegeräte / Vibrationsplatte, Manuthera 242 sowie
+                radiale Stoßwellentherapie etc. setzen eine Verordnung mit
+                entsprechender Diagnose vom Arzt voraus.
               </p>
             </div>
           </Reveal>

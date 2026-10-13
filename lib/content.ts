@@ -20,6 +20,7 @@ export interface Service {
   video?: string; // optionales Video, lokal ausgeliefert statt per YouTube
   youtubeId?: string; // optionales YouTube-Video, laedt erst nach Einwilligung
   youtubeShort?: boolean; // true bei YouTube Shorts, die im Hochformat laufen
+  hinweis?: string; // ersetzt den allgemeinen Verordnungshinweis auf dieser Seite
   related: string[]; // Slugs verwandter Leistungen
   metaTitle: string;
   metaDescription: string;
@@ -29,7 +30,7 @@ export const services: Service[] = [
   {
     slug: "physiotherapie",
     name: "Physiotherapie",
-    cat: "Auf ärztliche Verordnung · Kasse oder Selbstzahler",
+    cat: "Kasse oder Selbstzahler",
     img: IMG + "behandlungsraum.jpg",
     focus: "center",
     fit: "cover",
@@ -54,7 +55,7 @@ export const services: Service[] = [
   {
     slug: "krankengymnastik",
     name: "Krankengymnastik",
-    cat: "Auf ärztliche Verordnung · Kassenleistung",
+    cat: "Kassenleistung",
     img: IMG + "sprossenwand.jpg",
     focus: "center",
     fit: "cover",
@@ -106,7 +107,7 @@ export const services: Service[] = [
   {
     slug: "massage",
     name: "Massage",
-    cat: "Auf ärztliche Verordnung · Kasse oder Selbstzahler",
+    cat: "Kasse oder Selbstzahler",
     img: IMG + "behandlungsraum-fenster.jpg",
     focus: "center",
     fit: "cover",
@@ -131,7 +132,7 @@ export const services: Service[] = [
   {
     slug: "stosswellentherapie-hannover",
     name: "Stoßwellentherapie",
-    cat: "Auf ärztliche Verordnung · Privatrezept oder Selbstzahler",
+    cat: "Privatrezept oder Selbstzahler",
     img: IMG + "EMS_Swiss_DolorClast_Master_Deivice_Cart_side-1920w.jpg",
     focus: "center",
     fit: "contain",
@@ -150,6 +151,8 @@ export const services: Service[] = [
     ],
     device: "Swiss DolorClast von EMS, professionelle radiale Stoßwellentechnik.",
     youtubeId: "yxofeaGkzZY",
+    hinweis:
+      "Stoßwellenbehandlung nur mit vorheriger ärztlicher Diagnose vom Arzt durch eine Verordnung.",
     related: ["lasertherapie-hannover", "physiotherapie", "massage"],
     metaTitle: "Stoßwellentherapie in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
@@ -158,7 +161,7 @@ export const services: Service[] = [
   {
     slug: "lasertherapie-hannover",
     name: "Lasertherapie",
-    cat: "Auf ärztliche Verordnung · Privatrezept oder Selbstzahler",
+    cat: "Privatrezept oder Selbstzahler",
     img: IMG + "chattanooga-behandlung.jpg",
     focus: "center",
     fit: "cover",
@@ -184,7 +187,7 @@ export const services: Service[] = [
   {
     slug: "schroepftherapie",
     name: "Schröpftherapie",
-    cat: "Auf ärztliche Verordnung · Selbstzahler",
+    cat: "Selbstzahler",
     img: IMG + "IMG_0317-1920w.jpg",
     focus: "center",
     fit: "cover",
@@ -212,7 +215,7 @@ export const services: Service[] = [
   {
     slug: "vibrationsplatten-training",
     name: "Vibrationsplatten Training",
-    cat: "Auf ärztliche Verordnung · KG-Gerät oder Selbstzahler",
+    cat: "KG-Gerät oder Selbstzahler",
     img: IMG + "cardioraum.jpg",
     focus: "center",
     fit: "cover",
@@ -237,7 +240,7 @@ export const services: Service[] = [
   {
     slug: "faszienbehandlung",
     name: "Faszienbehandlung",
-    cat: "Auf ärztliche Verordnung · Selbstzahler",
+    cat: "Selbstzahler",
     img: IMG + "faszien-werkzeuge.jpg",
     focus: "center",
     fit: "contain",
@@ -262,7 +265,7 @@ export const services: Service[] = [
   {
     slug: "waermetherapie",
     name: "Wärmetherapie",
-    cat: "Auf ärztliche Verordnung · Selbstzahler",
+    cat: "Selbstzahler",
     img: IMG + "tdp-lampe-cq32.png",
     focus: "center",
     fit: "contain",
@@ -305,7 +308,7 @@ export const services: Service[] = [
  */
 export const verordnungHinweis = {
   titel: "Hinweis zu Selbstzahlerleistungen",
-  text: "Selbstzahlerleistungen setzen eine ärztliche Verordnung mit Diagnose voraus.",
+  text: "Grundsätzlich finden alle Selbstzahlerleistungen außer Massage nur mit ärztlicher Diagnose statt.",
 };
 
 export const serviceBySlug = (slug: string) =>
@@ -534,7 +537,7 @@ export const patient = [
   },
   {
     t: "Selbstzahlerleistungen",
-    d: "Selbstzahlerleistungen setzen eine ärztliche Verordnung mit Diagnose voraus.",
+    d: "Grundsätzlich finden alle Selbstzahlerleistungen außer Massage nur mit ärztlicher Diagnose statt.",
   },
   {
     t: "Rezept",

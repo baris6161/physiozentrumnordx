@@ -296,10 +296,16 @@ export const services: Service[] = [
  * Heilpraktikergesetzes und erlaubnispflichtig. Das Wort "Selbstzahler"
  * stand frueher allein und liess sich so lesen. Es bezeichnet aber nur die
  * Abrechnung, nicht den Zugang ohne Verordnung.
+ *
+ * Wortlaut vom Praxisinhaber. Entscheidend ist die Abgrenzung: Es muss ein
+ * Rezept mit Diagnose vorliegen. Die Verordnung muss die jeweilige
+ * geraetegestuetzte Therapie NICHT eigens benennen. Eine Formulierung wie
+ * "nur mit einer Verordnung moeglich" liess sich in diese Richtung lesen,
+ * deshalb "setzen voraus".
  */
 export const verordnungHinweis = {
   titel: "Hinweis zu Selbstzahlerleistungen",
-  text: "Die Inanspruchnahme von Selbstzahlerleistungen ist nur mit einer ärztlichen Verordnung inklusive Diagnose möglich.",
+  text: "Selbstzahlerleistungen setzen eine ärztliche Verordnung mit Diagnose voraus.",
 };
 
 export const serviceBySlug = (slug: string) =>
@@ -528,7 +534,7 @@ export const patient = [
   },
   {
     t: "Selbstzahlerleistungen",
-    d: "Die Inanspruchnahme von Selbstzahlerleistungen ist nur mit einer ärztlichen Verordnung inklusive Diagnose möglich.",
+    d: "Selbstzahlerleistungen setzen eine ärztliche Verordnung mit Diagnose voraus.",
   },
   {
     t: "Rezept",

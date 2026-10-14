@@ -540,7 +540,7 @@ export const patient = [
   },
   {
     t: "Rezept",
-    d: "Die Behandlung muss innerhalb von 14 Tagen ab Ausstellungsdatum beginnen. Bei BG-Rezepten und nach einer Klinikentlassung innerhalb von 7 Tagen. Rezepte sind nicht an das Quartal gebunden.",
+    d: "Die Behandlung muss innerhalb von 28 Tagen ab Ausstellungsdatum beginnen. Bei BG-Rezepten und nach einer Klinikentlassung innerhalb von 7 Tagen. Rezepte sind nicht an das Quartal gebunden.",
   },
   {
     t: "Zuzahlung",

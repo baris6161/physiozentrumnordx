@@ -25,9 +25,6 @@ export default function DeviceCard({ device }: { device: Device }) {
               : "object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
           }
         />
-        <span className="absolute right-3 top-3 rounded-full bg-ink px-2.5 py-1 text-[11px] font-bold tracking-[0.05em] text-white">
-          EXKLUSIV IN HANNOVER
-        </span>
       </Link>
       <div className="flex flex-1 flex-col p-6">
         <div className="text-[12.5px] font-bold uppercase tracking-[0.06em] text-greenDark">

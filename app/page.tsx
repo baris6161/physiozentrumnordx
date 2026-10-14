@@ -35,7 +35,7 @@ export default function Home() {
               <p className="mt-4 max-w-[42ch] text-[clamp(1rem,1.4vw,1.3rem)] text-muted">
                 Physiotherapie, Krankengymnastik und Reha in Hannover. Mit
                 Therapiegeräten wie dem 40 Watt Hochleistungslaser und der EMS
-                Stoßwelle, die Sie in dieser Kombination sonst kaum in Hannover finden.
+                Stoßwelle.
               </p>
               {/* Auf Mobile uebernimmt die feste Anrufen/Termin-Leiste unten,
                   daher die Hero-CTAs erst ab Desktop (lg) zeigen. */}
@@ -74,7 +74,7 @@ export default function Home() {
                   </span>
                   <span className="text-[14px] font-semibold leading-[1.35]">
                     Laser mit 40 Watt und EMS Stoßwelle.{" "}
-                    <span className="text-greenDark">Exklusiv in Hannover.</span>
+                    <span className="text-greenDark">Behandlung nach ärztlicher Diagnose.</span>
                   </span>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Home() {
           className={`${container} flex flex-wrap items-center justify-between gap-7 py-8 md:py-11`}
         >
           <p className="max-w-[60ch] font-heading text-[clamp(1.15rem,2vw,1.6rem)] font-semibold leading-tight">
-            Therapiegeräte, die es in Hannover sonst kaum gibt.{" "}
+            Moderne Therapiegeräte in unserer Praxis.{" "}
             <span className="text-[#8fd6a3]">
               Immer nur mit gültiger Diagnose vom Arzt.
             </span>

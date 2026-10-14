@@ -85,7 +85,7 @@ export const services: Service[] = [
     focus: "center",
     fit: "cover",
     card: "Manualtherapie auf der Manuthera 242. Sanfte Mobilisation von Gelenken, Muskeln und Nerven.",
-    lead: "Manualtherapie auf der Manuthera 242. Mit den Händen und der weltweit ersten Liege mit zwei synchronisierten Motoren finden wir die Ursache und mobilisieren gezielt.",
+    lead: "Manualtherapie auf der Manuthera 242. Mit den Händen und einer Liege mit zwei synchronisierten Motoren finden wir die Ursache und mobilisieren gezielt.",
     body: [
       "In der Manualtherapie untersuchen wir Sie ausführlich mit den Händen und erarbeiten eine Vermutung zur Ursache Ihrer Beschwerden. Danach behandeln wir gezielt das betroffene Gelenk, den Muskel oder den Nerv.",
       "Dabei arbeiten wir auf der Manuthera 242 von Lojer. Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander, sodass wir Ihre Wirbelsäule in Rotation, Seitneigung und Traktion bringen können, während Sie entspannt liegen bleiben.",
@@ -97,7 +97,7 @@ export const services: Service[] = [
       "Lindert Kopfschmerzen",
       "Stabilisiert überbewegliche Gelenke",
     ],
-    device: "Manuthera 242 von Lojer, die weltweit erste Behandlungsliege mit zwei synchronisierten Motoren.",
+    device: "Manuthera 242 von Lojer, Behandlungsliege mit zwei synchronisierten Motoren.",
     video: "/videos/manuthera-242.mp4",
     related: ["physiotherapie", "krankengymnastik", "massage"],
     metaTitle: "Manuthera 242 und Manualtherapie in Hannover | Physiotherapie Zentrum Nord",
@@ -218,15 +218,15 @@ export const services: Service[] = [
     img: IMG + "cardioraum.jpg",
     focus: "center",
     fit: "cover",
-    card: "Bis zu 97 Prozent Muskelaktivierung. Gelenkschonend und sehr effektiv.",
-    lead: "Auf der Vibrationsplatte aktivieren Sie in kurzer Zeit fast Ihre gesamte Muskulatur, und das ganz schonend für die Gelenke.",
+    card: "Aktiviert die Muskulatur über Reflexe. Gelenkschonend und zeitsparend.",
+    lead: "Auf der Vibrationsplatte arbeitet Ihre Muskulatur über Reflexe mit, in kurzer Zeit und schonend für die Gelenke.",
     body: [
-      "Beim Training auf der Vibrationsplatte schwingen die Platten seitenalternierend und lösen reflexartige Muskelkontraktionen aus, 1.800 bis 3.000 pro Minute. Dabei aktivieren Sie bis zu 97 Prozent Ihrer Muskelfasern.",
+      "Beim Training auf der Vibrationsplatte schwingen die Platten seitenalternierend und lösen reflexartige Muskelkontraktionen aus. Wie viele es sind, hängt von der eingestellten Frequenz ab.",
       "Das gelenkschonende Ganzkörpertraining kräftigt die Tiefenmuskulatur, beugt Rückenbeschwerden vor und passt für jedes Alter. Als KG-Geräteleistung oder als Selbstzahlerleistung, in beiden Fällen auf ärztliche Verordnung.",
     ],
     benefits: [
       "Kräftigt die Tiefenmuskulatur",
-      "1.800 bis 3.000 Kontraktionen pro Minute",
+      "Reflexartige Muskelkontraktionen",
       "Beugt Rückenbeschwerden vor",
       "Für jedes Alter geeignet",
     ],
@@ -234,7 +234,7 @@ export const services: Service[] = [
     related: ["krankengymnastik", "physiotherapie", "stosswellentherapie-hannover"],
     metaTitle: "Vibrationsplatten Training in Hannover | Physiotherapie Zentrum Nord",
     metaDescription:
-      "Vibrationsplatten Training in Hannover. Bis zu 97 Prozent Muskelaktivierung, gelenkschonend und effektiv, für jedes Alter.",
+      "Vibrationsplatten Training in Hannover. Gelenkschonendes Training über reflexartige Muskelaktivierung, für jedes Alter.",
   },
   {
     slug: "faszienbehandlung",
@@ -350,8 +350,8 @@ export const devices: Device[] = [
     // Sache und standen vorher als zwei Seiten gleichen Namens in
     // Konkurrenz zueinander. Alles liegt jetzt unter /manuthera-242.
     ownPage: false,
-    desc: "Die weltweit erste Liege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Dekompression.",
-    lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind.",
+    desc: "Behandlungsliege mit zwei synchronisierten Motoren. Für dreidimensionale Mobilisation, Traktion und sanfte Entlastung.",
+    lead: "Die Manuthera 242 von Lojer ist eine Behandlungsliege, die sich in drei Ebenen bewegt und dadurch Techniken erlaubt, die auf einer starren Liege nicht möglich sind. Der Hersteller bezeichnet sie als erste Liege mit zwei synchronisierten Motoren.",
     body: [
       "Zwei synchronisierte Motoren bewegen Kopf und Rumpfteil unabhängig voneinander. Dadurch können wir Ihre Wirbelsäule gezielt in Rotation, Seitneigung und Traktion bringen, während Sie entspannt liegen bleiben.",
       "Für Sie bedeutet das vor allem eines: Sie müssen sich während der Behandlung nicht aktiv halten oder umlagern. Wir arbeiten mit der Liege statt gegen Ihr Körpergewicht und können so auch bei akuten Beschwerden sehr sanft vorgehen.",
@@ -528,7 +528,7 @@ export const patient = [
   },
   {
     t: "Terminabsagen",
-    d: "Bitte sagen Sie vereinbarte Termine mindestens 24 Stunden vorher ab. Andernfalls müssen wir die Leistung nach § 615 BGB unter Umständen privat in Rechnung stellen.",
+    d: "Bitte sagen Sie vereinbarte Termine rechtzeitig ab, am besten mindestens einen Tag vorher. So können wir den Platz an jemand anderen vergeben. Bei kurzfristigen Absagen sprechen Sie uns bitte an.",
   },
   {
     t: "Handtuch",
@@ -540,11 +540,11 @@ export const patient = [
   },
   {
     t: "Rezept",
-    d: "Die Behandlung muss innerhalb von 28 Tagen ab Ausstellungsdatum beginnen. Bei BG-Rezepten und nach einer Klinikentlassung innerhalb von 7 Tagen. Rezepte sind nicht an das Quartal gebunden.",
+    d: "In der Regel soll die Behandlung innerhalb von 28 Tagen ab Ausstellungsdatum beginnen. Auf Ihrer Verordnung kann ein abweichender Termin vermerkt sein, und für einzelne Verordnungsarten gelten eigene Fristen. Bringen Sie Ihr Rezept einfach mit oder rufen Sie uns an, wir sehen gemeinsam nach.",
   },
   {
     t: "Zuzahlung",
-    d: "Gesetzlich Versicherte leisten nach § 32 SGB V eine Zuzahlung von 10 Euro pro Rezept plus 10 Prozent des Rezeptwertes. Ausgenommen sind unter anderem Kinder und Jugendliche unter 18 Jahren, Befreite und BG-Patienten.",
+    d: "Für gesetzlich Versicherte fällt in der Regel die gesetzliche Zuzahlung an. Befreiungen sind möglich, etwa für Kinder und Jugendliche oder mit einer gültigen Befreiungsbescheinigung Ihrer Krankenkasse. Die genaue Höhe für Ihre Verordnung nennen wir Ihnen gern bei der Terminvereinbarung.",
   },
 ];
 
